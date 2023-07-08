@@ -6,7 +6,7 @@ import Modal from "../Modal";
 
 const Header: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const isMobile = window.innerWidth <= 768;
+  const isMobile = window!.innerWidth <= 768;
 
   const openModalHandler = () => {
     setIsModalOpen(true);
