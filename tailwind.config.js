@@ -5,7 +5,14 @@ module.exports = {
     `./src/components/**/*.{js,jsx,ts,tsx}`,
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        festive: ["'Comfortaa', cursive"],
+      },
+      variants: {
+        display: ["responsive", "group-hover", "group-focus"],
+      },
+    },
   },
   plugins: [],
-}
+};
