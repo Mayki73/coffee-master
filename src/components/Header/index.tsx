@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import NavBar from "../NavBar";
 import Button from "../Form/Button";
 import { PhoneIcon } from "@heroicons/react/20/solid";
@@ -6,7 +6,22 @@ import Modal from "../Modal";
 
 const Header: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const isMobile = window!.innerWidth <= 768;
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 768px)"); // Adjust the breakpoint as needed
+
+    const handleMediaQuery = (event: any) => {
+      setIsMobile(event.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleMediaQuery);
+    handleMediaQuery(mediaQuery); // Set initial value
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaQuery);
+    };
+  }, []);
 
   const openModalHandler = () => {
     setIsModalOpen(true);
