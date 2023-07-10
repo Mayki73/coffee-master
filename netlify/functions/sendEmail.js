@@ -46,7 +46,9 @@ exports.handler = async (event) => {
           <body>
           <div class="container">
           <h1>Новая заявка из Coffeemaster</h1>
-          <p><span>Дата:</span> ${new Date().toLocaleString()}</p>
+          <p><span>Дата:</span> ${new Date(
+            new Date().setHours(new Date().getHours() + 3)
+          ).toLocaleString()}</p>
           <p><span>Имя:</span> ${name}</p>
           <p><span>Телефон:</span> ${phone}</p>
             <p>С уважением, Coffeemaster</p>
