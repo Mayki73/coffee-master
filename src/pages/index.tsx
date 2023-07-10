@@ -1,11 +1,5 @@
 import * as React from "react";
-import {
-  useStaticQuery,
-  type HeadFC,
-  type PageProps,
-  graphql,
-  Link,
-} from "gatsby";
+import { useStaticQuery, type PageProps, graphql, Link } from "gatsby";
 import Header from "../components/Header";
 import Button from "../components/Form/Button";
 import { Disclosure } from "@headlessui/react";
@@ -23,7 +17,7 @@ import {
   BriefcaseIcon,
   InformationCircleIcon,
 } from "@heroicons/react/24/solid";
-
+import { Helmet } from "react-helmet";
 import { dropdownList } from "../constants/dropdown-brands-list";
 import Footer from "../components/Footer";
 import Modal from "../components/Modal";
@@ -178,6 +172,17 @@ const IndexPage: React.FC<PageProps> = () => {
   return (
     <>
       <Modal open={isModalOpen} setOpen={setIsModalOpen} />
+      <Helmet>
+        <title>Ремонт кофемашин - Coffeemaster</title>
+        <meta
+          name="description"
+          content="Представляем вам качественный ремонт кофемашин в Минске. Наша команда опытных мастеров специализируется на ремонте и обслуживании кофемашин различных моделей и брендов. Мы предлагаем широкий спектр услуг, включая диагностику, ремонт неисправностей, замену деталей и профилактику. Наша цель - обеспечить надежное функционирование вашей кофемашины и наслаждение вкусным кофе каждый день. Обратитесь к нам для профессионального ремонта кофемашин в Минске."
+        />
+        <meta
+          name="keywords"
+          content="Ремонт кофемашин, ремонт кофемашин в Минске, ремонт кофемашин в Минске цены, сервис по ремонту кофемашин, кофемашина ремонт, обслуживание кофемашин, ремонт кофемашин Bosch, ремонт кофемашин Saeco, ремонт кофемашин DeLonghi, ремонт кофемашин Jura, ремонт кофемашин Krups, ремонт кофемашин Gaggia, качественный ремонт кофемашин, профессиональный ремонт кофемашин, ремонт кофейных машин в Минске, специалисты по ремонту кофемашин, быстрый ремонт кофемашин, надежный ремонт кофемашин, ремонт кофемашин всех брендов."
+        />
+      </Helmet>
       <Header />
       <main className="font-[Comfortaa] mt-20 space-y-20 pb-20">
         <section
@@ -355,5 +360,3 @@ const IndexPage: React.FC<PageProps> = () => {
 };
 
 export default IndexPage;
-
-export const Head: HeadFC = () => <title>Home Page</title>;

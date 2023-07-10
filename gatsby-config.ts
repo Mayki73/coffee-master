@@ -14,6 +14,7 @@ const config: GatsbyConfig = {
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
     "gatsby-plugin-sharp",
+    "gatsby-plugin-react-helmet",
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
