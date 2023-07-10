@@ -4,12 +4,16 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { IOrder } from "../../models/order.model";
 import Input from "../Form/Input";
+import { useSendEmail } from "../../services/order.services";
 
 interface IProps {
   closeModal: () => void;
 }
 
 const OrderForm: React.FC<IProps> = ({ closeModal }) => {
+  const { mutate: sendEmail } = useSendEmail(() => {
+    closeModal();
+  });
   const OrderFormSchema = yup.object({
     name: yup.string().required("Пожалуйста, укажите свое имя!"),
     phone: yup.string().required("Пожалуйста, укажите свой номер телефона!"),
@@ -20,8 +24,7 @@ const OrderForm: React.FC<IProps> = ({ closeModal }) => {
   });
 
   const submitOrderForm = (data: IOrder) => {
-    console.log(data);
-    closeModal();
+    sendEmail(data);
   };
 
   const {
