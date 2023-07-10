@@ -1,5 +1,5 @@
 import React from "react";
-import { HeadFC } from "gatsby";
+import { Helmet } from "react-helmet";
 import {
   PhoneIcon,
   MagnifyingGlassIcon,
@@ -41,6 +41,19 @@ const workSteps = [
 const About: React.FC = () => {
   return (
     <>
+      <Helmet>
+        <title>
+          О нас - Специалисты по ремонту кофемашин в Минске | Coffeemaster
+        </title>
+        <meta
+          name="description"
+          content="Познакомьтесь с нашей командой опытных специалистов по ремонту кофемашин в Минске. Мы предлагаем профессиональные услуги по ремонту кофеоборудования, включая этапы от подачи заявки до окончательного ремонта. Узнайте больше о нашем опыте и качестве обслуживания."
+        />
+        <meta
+          name="keywords"
+          content="ремонт кофемашин Минск, специалисты по ремонту кофемашин, опытные мастера, этапы ремонта кофейного оборудования, обслуживание кофемашин, ремонт кофеоборудования, ремонт кофе машин"
+        />
+      </Helmet>
       <Header />
       <main className="max-w-screen-2xl mx-5 md:mx-auto my-20 font-[Comfortaa] text-base md:text-lg leading-8 tracking-wider text-gray-600 font-light">
         <h1 className="text-2xl md:text-4xl text-center text-black font-normal">
@@ -132,5 +145,3 @@ const About: React.FC = () => {
 };
 
 export default About;
-
-export const Head: HeadFC = () => <title>О нас</title>;

@@ -10,6 +10,7 @@ import Footer from "../components/Footer";
 import { GatsbyImage } from "gatsby-plugin-image";
 import "./repair.css";
 import Modal from "../components/Modal";
+import { Helmet } from "react-helmet";
 
 const Repair: React.FC = ({ pageContext }: any) => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
@@ -55,6 +56,20 @@ const Repair: React.FC = ({ pageContext }: any) => {
   return (
     <>
       <Modal open={isModalOpen} setOpen={setIsModalOpen} />
+      <Helmet>
+        <title>
+          Ремонт кофемашин: Бытовые, Встраиваемые, Профессиональные, Вендинговые
+          | Coffeemaster
+        </title>
+        <meta
+          name="description"
+          content="Coffeemaster предлагает профессиональные услуги по ремонту кофемашин разных категорий. Выберите нужную категорию: Бытовые кофемашины, Встраиваемые, Профессиональные или Вендинговые, и ознакомьтесь со списком брендов, которые мы обслуживаем."
+        />
+        <meta
+          name="keywords"
+          content="ремонт кофемашин, ремонт бытовых кофемашин, ремонт бытовых кофемашин Минск, ремонт встраиваемых кофемашин, ремонт встраиваемых кофемашин Минск, ремонт профессиональных кофемашин, ремонт профессиональных кофемашин Минск, ремонт вендинговых кофемашин, ремонт вендинговых кофемашин Минск, список брендов кофемашин"
+        />
+      </Helmet>
       <Header />
       <main className="max-w-screen-2xl mx-5 md:mx-auto my-20 font-[Comfortaa] text-base md:text-lg leading-8 tracking-wider text-gray-600 font-light">
         <h1 className="text-2xl md:text-4xl text-center text-black font-medium">

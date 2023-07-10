@@ -20,6 +20,7 @@ import Footer from "../components/Footer";
 import { ChatBubbleLeftEllipsisIcon } from "@heroicons/react/20/solid";
 import Button from "../components/Form/Button";
 import Modal from "../components/Modal";
+import { Helmet } from "react-helmet";
 
 const mulfunctions = [
   {
@@ -94,6 +95,17 @@ const Mulfunctions: React.FC = () => {
   return (
     <>
       <Modal open={isModalOpen} setOpen={setIsModalOpen} />
+      <Helmet>
+        <title>Распространенные неисправности кофемашин | Coffeemaster</title>
+        <meta
+          name="description"
+          content="Узнайте о распространенных неисправностях кофемашин и как мы можем помочь в их ремонте. Coffeemaster предлагает профессиональные услуги по диагностике и исправлению проблем с кофеоборудованием. Быстро и надежно устраняем все типы неисправностей."
+        />
+        <meta
+          name="keywords"
+          content="неисправности кофемашин, ремонт кофемашин Минск, диагностика кофейного оборудования, исправление проблем с кофеваркой, ремонт кофе машин, специалисты по ремонту кофемашин"
+        />
+      </Helmet>
       <Header />
       <main className="max-w-screen-2xl mx-5 md:mx-auto my-20 font-[Comfortaa] text-base md:text-lg leading-8 tracking-wider text-gray-600 font-light space-y-10">
         <h1 className="text-2xl md:text-4xl text-center text-black font-medium">

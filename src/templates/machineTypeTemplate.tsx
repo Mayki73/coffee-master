@@ -7,6 +7,7 @@ import { Link, graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import "./repair.css";
 import Modal from "../components/Modal";
+import { Helmet } from "react-helmet";
 
 const servicePrices = [
   {
@@ -120,6 +121,7 @@ const MachineTypeTemplate: React.FC = ({ pageContext }: any) => {
     descriptionList,
     brands,
     advantages,
+    seo,
   } = pageContext.machine;
 
   const data = useStaticQuery(graphql`
@@ -162,6 +164,11 @@ const MachineTypeTemplate: React.FC = ({ pageContext }: any) => {
   return (
     <>
       <Modal open={isModalOpen} setOpen={setIsModalOpen} />
+      <Helmet>
+        <title>{seo.title}</title>
+        <meta name="description" content={seo.description} />
+        <meta name="keywords" content={seo.keywords} />
+      </Helmet>
       <Header />
       <main className="max-w-screen-2xl mx-5 md:mx-auto my-20 font-[Comfortaa] text-base md:text-lg leading-8 tracking-wider text-gray-600 font-light space-y-10">
         <h1 className="text-2xl md:text-4xl text-black font-medium text-center">

@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import { HeadFC } from "gatsby";
 import Button from "../components/Form/Button";
 import Modal from "../components/Modal";
+import { Helmet } from "react-helmet";
 
 const servicePrices = [
   {
@@ -217,6 +218,17 @@ const Prices: React.FC = () => {
   return (
     <>
       <Modal open={isModalOpen} setOpen={setIsModalOpen} />
+      <Helmet>
+        <title>Цены на ремонт кофемашин в Минске | Coffeemaster</title>
+        <meta
+          name="description"
+          content="Ознакомьтесь с нашими ценами на ремонт кофемашин в Минске. Мы предлагаем профессиональные услуги по диагностике, ремонту и обслуживанию кофейного оборудования по доступным ценам. Узнайте стоимость ремонта вашей кофемашины с помощью нашего прайс-листа."
+        />
+        <meta
+          name="keywords"
+          content="цены на ремонт кофемашин Минск, прайс-лист на ремонт кофемашин, стоимость ремонта кофеварок, диагностика кофейного оборудования, обслуживание кофемашин, ремонт кофе машин"
+        />
+      </Helmet>
       <Header />
       <main className="max-w-screen-2xl mx-5 md:mx-auto my-20 font-[Comfortaa] text-base md:text-lg leading-8 tracking-wider text-gray-600 font-light space-y-10">
         <h1 className="text-2xl md:text-4xl text-center text-black font-normal">
