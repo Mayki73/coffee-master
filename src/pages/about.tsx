@@ -8,6 +8,7 @@ import {
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import AnimatedArrows from "../components/AnimatedArrows";
+import ScrollAnimate from "../components/ScrollAnimate";
 
 const services = [
   "диагностика кофемашин и выявление неисправного компонента",
@@ -56,88 +57,99 @@ const About: React.FC = () => {
       </Helmet>
       <Header />
       <main className="max-w-screen-2xl mx-5 md:mx-auto my-20 font-[Comfortaa] text-base md:text-lg leading-8 tracking-wider text-gray-600 font-light">
-        <h1 className="text-xl md:text-2xl text-center text-black font-normal">
-          О нас
-        </h1>
+        <ScrollAnimate>
+          <h1 className="text-xl md:text-2xl text-center text-black font-normal">
+            О нас
+          </h1>
+        </ScrollAnimate>
 
-        <p className="mt-10">
-          Наша компания работает более 5 лет, за это время мы наработали опыт по
-          ремонту даже самых сложных неисправностей. Мы каждый день ремонтируем
-          кофемашины разных брендов:{" "}
-          <b className="text-black">
-            Delonghi, Jura, Saeco, Philips, Bosch, WMF, Shaerer, Franke,
-            Simonelli, Smeg, Bork, Gaggia, Melitta, Miele, Nivona, Krups
-          </b>{" "}
-          и даем на это гарантию 6 месяцев. У нас в штате 5 мастеров, которые
-          выполняют плановые обслуживания и ремонты в офисах города Москвы и МО.
-          Сеть кофеен, которая угощает Вас кофе каждый день, наша работа.
-        </p>
+        <ScrollAnimate>
+          <p className="mt-10">
+            Наша компания работает более 5 лет, за это время мы наработали опыт
+            по ремонту даже самых сложных неисправностей. Мы каждый день
+            ремонтируем кофемашины разных брендов:{" "}
+            <b className="text-black">
+              Delonghi, Jura, Saeco, Philips, Bosch, WMF, Shaerer, Franke,
+              Simonelli, Smeg, Bork, Gaggia, Melitta, Miele, Nivona, Krups
+            </b>{" "}
+            и даем на это гарантию 6 месяцев. У нас в штате 5 мастеров, которые
+            выполняют плановые обслуживания и ремонты в офисах города Москвы и
+            МО. Сеть кофеен, которая угощает Вас кофе каждый день, наша работа.
+          </p>
+        </ScrollAnimate>
 
-        <h2 className="text-xl md:text-2xl text-center mt-20 text-black font-normal">
-          Какие работы мы выполняем:
-        </h2>
+        <ScrollAnimate>
+          <h2 className="text-xl md:text-2xl text-center mt-20 text-black font-normal">
+            Какие работы мы выполняем:
+          </h2>
+        </ScrollAnimate>
 
         <div className="flex justify-center mt-10">
           <ul className="space-y-5 text-base md:text-xl text-gray-600 font-light max-w-[50rem]">
             {services.map((service, index) => (
-              <li key={index} className="flex items-center">
-                <svg
-                  className="w-4 h-4 mr-2 text-green-500 dark:text-green-400 flex-shrink-0"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"
-                  ></path>
-                </svg>
-                {service}
-              </li>
+              <ScrollAnimate>
+                <li key={index} className="flex items-center">
+                  <svg
+                    className="w-4 h-4 mr-2 text-green-500 dark:text-green-400 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  {service}
+                </li>
+              </ScrollAnimate>
             ))}
           </ul>
         </div>
 
-        <h3 className="text-xl md:text-2xl text-center mt-20 text-black font-normal">
-          Как мы работаем?
-        </h3>
+        <ScrollAnimate>
+          <h3 className="text-xl md:text-2xl text-center mt-20 text-black font-normal">
+            Как мы работаем?
+          </h3>
+        </ScrollAnimate>
+        <ScrollAnimate>
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-10 mt-10">
+            <div className="flex flex-col items-center space-y-5 max-w-[20rem]">
+              {workSteps[0].icon}
+              <h4 className="text-xl md:text-xl text-center text-black font-normal">
+                {workSteps[0].title}
+              </h4>
+              <p className="text-base md:text-lg text-center text-gray-600 font-light">
+                {workSteps[0].description}
+              </p>
+            </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center space-y-10 mt-10">
-          <div className="flex flex-col items-center space-y-5 max-w-[20rem]">
-            {workSteps[0].icon}
-            <h4 className="text-xl md:text-xl text-center text-black font-normal">
-              {workSteps[0].title}
-            </h4>
-            <p className="text-base md:text-lg text-center text-gray-600 font-light">
-              {workSteps[0].description}
-            </p>
+            <AnimatedArrows />
+
+            <div className="flex flex-col items-center space-y-5 max-w-[20rem]">
+              {workSteps[1].icon}
+              <h4 className="text-xl md:text-xl text-center text-black font-normal">
+                {workSteps[1].title}
+              </h4>
+              <p className="text-base md:text-lg text-center text-gray-600 font-light">
+                {workSteps[1].description}
+              </p>
+            </div>
+
+            <AnimatedArrows />
+
+            <div className="flex flex-col items-center space-y-5 max-w-[20rem]">
+              {workSteps[2].icon}
+              <h4 className="text-xl md:text-xl text-center text-black font-normal">
+                {workSteps[2].title}
+              </h4>
+              <p className="text-base md:text-lg text-center text-gray-600 font-light">
+                {workSteps[2].description}
+              </p>
+            </div>
           </div>
-
-          <AnimatedArrows />
-
-          <div className="flex flex-col items-center space-y-5 max-w-[20rem]">
-            {workSteps[1].icon}
-            <h4 className="text-xl md:text-xl text-center text-black font-normal">
-              {workSteps[1].title}
-            </h4>
-            <p className="text-base md:text-lg text-center text-gray-600 font-light">
-              {workSteps[1].description}
-            </p>
-          </div>
-
-          <AnimatedArrows />
-
-          <div className="flex flex-col items-center space-y-5 max-w-[20rem]">
-            {workSteps[2].icon}
-            <h4 className="text-xl md:text-xl text-center text-black font-normal">
-              {workSteps[2].title}
-            </h4>
-            <p className="text-base md:text-lg text-center text-gray-600 font-light">
-              {workSteps[2].description}
-            </p>
-          </div>
-        </div>
+        </ScrollAnimate>
       </main>
       <Footer />
     </>

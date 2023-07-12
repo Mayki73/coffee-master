@@ -6,6 +6,7 @@ import { HeadFC } from "gatsby";
 import Button from "../components/Form/Button";
 import Modal from "../components/Modal";
 import { Helmet } from "react-helmet";
+import ScrollAnimate from "../components/ScrollAnimate";
 
 const servicePrices = [
   {
@@ -231,161 +232,176 @@ const Prices: React.FC = () => {
       </Helmet>
       <Header />
       <main className="max-w-screen-2xl mx-5 md:mx-auto my-20 font-[Comfortaa] text-base md:text-lg leading-8 tracking-wider text-gray-600 font-light space-y-10">
-        <h1 className="text-xl md:text-2xl text-center text-black font-normal">
-          Цены на ремонт кофемашин
-        </h1>
-        <p>
-          Ознакомьтесь с прайс-листом на ремонт и обслуживание кофемашин. Вы
-          можете узнать цены на конкретные работы или на комплексный ремонт
-          неисправности.
-        </p>
+        <ScrollAnimate>
+          <h1 className="text-xl md:text-2xl text-center text-black font-normal">
+            Цены на ремонт кофемашин
+          </h1>
+        </ScrollAnimate>
+
+        <ScrollAnimate>
+          <p>
+            Ознакомьтесь с прайс-листом на ремонт и обслуживание кофемашин. Вы
+            можете узнать цены на конкретные работы или на комплексный ремонт
+            неисправности.
+          </p>
+        </ScrollAnimate>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 space-y-10 md:space-y-0">
           <div className="relative overflow-x-auto shadow-md">
-            <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-              <thead className="text-xs text-white uppercase bg-black">
-                <tr>
-                  <th scope="col" className="px-6 py-3 text-lg">
-                    Цены по услугам
-                  </th>
-                  <th scope="col" className="px-6 py-3">
-                    <span className="sr-only">Price</span>
-                  </th>
-                  <th scope="col" className="px-6 py-3">
-                    <span className="sr-only">Order</span>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {servicePrices.map((servicePrice) => (
-                  <tr className="bg-white border-b hover:bg-gray-50 dark:hover:bg-gray-600">
-                    <th
-                      scope="row"
-                      className="px-6 py-4 font-medium text-gray-900 dark:text-white"
-                    >
-                      <p className="max-w-[14rem]">{servicePrice.title}</p>
+            <ScrollAnimate>
+              <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <thead className="text-xs text-white uppercase bg-black">
+                  <tr>
+                    <th scope="col" className="px-6 py-3 text-lg">
+                      Цены по услугам
                     </th>
-                    <td className="px-6 py-4">
-                      <p>{servicePrice.price}</p>
-                    </td>
-                    <td className="px-6 py-4 text-right">
-                      <Button
-                        onClick={openModalHandler}
-                        className="bg-black hover:text-black hover:bg-white text-white"
-                      >
-                        Заказать
-                      </Button>
-                    </td>
+                    <th scope="col" className="px-6 py-3">
+                      <span className="sr-only">Price</span>
+                    </th>
+                    <th scope="col" className="px-6 py-3">
+                      <span className="sr-only">Order</span>
+                    </th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {servicePrices.map((servicePrice) => (
+                    <tr className="bg-white border-b hover:bg-gray-50 dark:hover:bg-gray-600">
+                      <th
+                        scope="row"
+                        className="px-6 py-4 font-medium text-gray-900 dark:text-white"
+                      >
+                        <p className="max-w-[14rem]">{servicePrice.title}</p>
+                      </th>
+                      <td className="px-6 py-4">
+                        <p>{servicePrice.price}</p>
+                      </td>
+                      <td className="px-6 py-4 text-right">
+                        <Button
+                          onClick={openModalHandler}
+                          className="bg-black hover:text-black hover:bg-white text-white"
+                        >
+                          Заказать
+                        </Button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </ScrollAnimate>
           </div>
 
           <div className="space-y-10">
             <div className="relative overflow-x-auto shadow-md">
-              <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                <thead className="text-xs text-white uppercase bg-black">
-                  <tr>
-                    <th scope="col" className="px-6 py-3 text-lg">
-                      Остальные услуги
-                    </th>
-                    <th scope="col" className="px-6 py-3">
-                      <span className="sr-only">Price</span>
-                    </th>
-                    <th scope="col" className="px-6 py-3">
-                      <span className="sr-only">Order</span>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {otherPrices.map((otherPrice) => (
-                    <tr className="bg-white border-b hover:bg-gray-50 dark:hover:bg-gray-600">
-                      <th
-                        scope="row"
-                        className="px-6 py-4 font-medium text-gray-900 dark:text-white"
-                      >
-                        <p className="max-w-[14rem]">{otherPrice.title}</p>
+              <ScrollAnimate>
+                <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                  <thead className="text-xs text-white uppercase bg-black">
+                    <tr>
+                      <th scope="col" className="px-6 py-3 text-lg">
+                        Остальные услуги
                       </th>
-                      <td className="px-6 py-4">
-                        <p>{otherPrice.price}</p>
-                      </td>
-                      <td className="px-6 py-4 text-right">
-                        <Button
-                          onClick={openModalHandler}
-                          className="bg-black hover:text-black hover:bg-white text-white"
-                        >
-                          Заказать
-                        </Button>
-                      </td>
+                      <th scope="col" className="px-6 py-3">
+                        <span className="sr-only">Price</span>
+                      </th>
+                      <th scope="col" className="px-6 py-3">
+                        <span className="sr-only">Order</span>
+                      </th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {otherPrices.map((otherPrice) => (
+                      <tr className="bg-white border-b hover:bg-gray-50 dark:hover:bg-gray-600">
+                        <th
+                          scope="row"
+                          className="px-6 py-4 font-medium text-gray-900 dark:text-white"
+                        >
+                          <p className="max-w-[14rem]">{otherPrice.title}</p>
+                        </th>
+                        <td className="px-6 py-4">
+                          <p>{otherPrice.price}</p>
+                        </td>
+                        <td className="px-6 py-4 text-right">
+                          <Button
+                            onClick={openModalHandler}
+                            className="bg-black hover:text-black hover:bg-white text-white"
+                          >
+                            Заказать
+                          </Button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </ScrollAnimate>
             </div>
 
             <div className="relative overflow-x-auto shadow-md">
-              <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                <thead className="text-xs text-white uppercase bg-black">
-                  <tr>
-                    <th scope="col" className="px-6 py-3 text-lg">
-                      Остальные услуги
-                    </th>
-                    <th scope="col" className="px-6 py-3">
-                      <span className="sr-only">Price</span>
-                    </th>
-                    <th scope="col" className="px-6 py-3">
-                      <span className="sr-only">Order</span>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {breakdownPrices.map((breakdownPrice) => (
-                    <tr className="bg-white border-b hover:bg-gray-50 dark:hover:bg-gray-600">
-                      <th
-                        scope="row"
-                        className="px-6 py-4 font-medium text-gray-900 dark:text-white"
-                      >
-                        <p className="max-w-[14rem]">{breakdownPrice.title}</p>
+              <ScrollAnimate>
+                <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                  <thead className="text-xs text-white uppercase bg-black">
+                    <tr>
+                      <th scope="col" className="px-6 py-3 text-lg">
+                        Остальные услуги
                       </th>
-                      <td className="px-6 py-4">
-                        <p>{breakdownPrice.price}</p>
-                      </td>
-                      <td className="px-6 py-4 text-right">
-                        <Button
-                          onClick={openModalHandler}
-                          className="bg-black hover:text-black hover:bg-white text-white"
-                        >
-                          Заказать
-                        </Button>
-                      </td>
+                      <th scope="col" className="px-6 py-3">
+                        <span className="sr-only">Price</span>
+                      </th>
+                      <th scope="col" className="px-6 py-3">
+                        <span className="sr-only">Order</span>
+                      </th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {breakdownPrices.map((breakdownPrice) => (
+                      <tr className="bg-white border-b hover:bg-gray-50 dark:hover:bg-gray-600">
+                        <th
+                          scope="row"
+                          className="px-6 py-4 font-medium text-gray-900 dark:text-white"
+                        >
+                          <p className="max-w-[14rem]">
+                            {breakdownPrice.title}
+                          </p>
+                        </th>
+                        <td className="px-6 py-4">
+                          <p>{breakdownPrice.price}</p>
+                        </td>
+                        <td className="px-6 py-4 text-right">
+                          <Button
+                            onClick={openModalHandler}
+                            className="bg-black hover:text-black hover:bg-white text-white"
+                          >
+                            Заказать
+                          </Button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </ScrollAnimate>
             </div>
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row space-y-5 md:space-y-0 justify-between items-center p-5 border-2 border-black">
-          <ChatBubbleLeftEllipsisIcon className="w-32 h-32 text-black" />
+        <ScrollAnimate>
+          <div className="flex flex-col md:flex-row space-y-5 md:space-y-0 justify-between items-center p-5 border-2 border-black">
+            <ChatBubbleLeftEllipsisIcon className="w-32 h-32 text-black" />
 
-          <div className="space-y-3">
-            <h3 className="text-xl font-medium">Не нашли подходящее?</h3>
-            <h4>Закажите обратный звонок</h4>
-            <p>
-              Оставьте свои контакты в форме, наши специалисты свяжутся с вами в
-              ближайшее время
-            </p>
+            <div className="space-y-3">
+              <h3 className="text-xl font-medium">Не нашли подходящее?</h3>
+              <h4>Закажите обратный звонок</h4>
+              <p>
+                Оставьте свои контакты в форме, наши специалисты свяжутся с вами
+                в ближайшее время
+              </p>
+            </div>
+
+            <Button
+              onClick={openModalHandler}
+              className="bg-black hover:text-black hover:bg-white text-white"
+            >
+              Заказать звонок
+            </Button>
           </div>
-
-          <Button
-            onClick={openModalHandler}
-            className="bg-black hover:text-black hover:bg-white text-white"
-          >
-            Заказать звонок
-          </Button>
-        </div>
+        </ScrollAnimate>
       </main>
       <Footer />
     </>

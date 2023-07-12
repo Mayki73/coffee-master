@@ -23,6 +23,7 @@ import Footer from "../components/Footer";
 import Modal from "../components/Modal";
 import ReviewCarousel from "../components/ReviewCarousel";
 import StartModal from "../components/StarterModal";
+import ScrollAnimate from "../components/ScrollAnimate";
 
 const advantages = [
   {
@@ -237,6 +238,7 @@ const IndexPage: React.FC<PageProps> = () => {
         />
       </Helmet>
       <Header />
+
       <main className="font-[Comfortaa] mt-20 space-y-20 pb-20">
         <section
           className="flex flex-col items-center space-y-10 px-5 md:px-0 py-16 p-0 md:p-16 text-white"
@@ -253,82 +255,94 @@ const IndexPage: React.FC<PageProps> = () => {
                 "linear-gradient(180deg, rgba(101,101,101, 80%), rgba(121,121,121,60%), rgba(164,164,164,50%), rgba(208,208,208,0), rgba(255,255,255, 0))",
             }}
           >
-            <h1 className="text-xl md:text-2xl text-center font-bold">
-              Ремонт кофемашин в Минске
-            </h1>
-            <p className="w-full max-w-[150rem] md:max-w-[80rem] text-center text-base md:text-xl">
-              Наши мастера выполняют качественный ремонт для продления срока
-              службы кофемашин. Мы не делаем диагностику за деньги – мы выявляем
-              неисправные компоненты и меняем их на новые.
-            </p>
-            <Button
-              onClick={openModalHandler}
-              className="text-black bg-white hover:bg-black hover:text-white"
-            >
-              Рассчитать стоимость ремонта
-            </Button>
+            <ScrollAnimate>
+              <h1 className="text-xl md:text-2xl text-center font-bold">
+                Ремонт кофемашин в Минске
+              </h1>
+            </ScrollAnimate>
+            <ScrollAnimate>
+              <p className="w-full max-w-[150rem] md:max-w-[80rem] text-center text-base md:text-xl">
+                Наши мастера выполняют качественный ремонт для продления срока
+                службы кофемашин. Мы не делаем диагностику за деньги – мы
+                выявляем неисправные компоненты и меняем их на новые.
+              </p>
+            </ScrollAnimate>
+            <ScrollAnimate>
+              <div className="flex justify-center">
+                <Button
+                  onClick={openModalHandler}
+                  className="text-black bg-white hover:bg-black hover:text-white"
+                >
+                  Рассчитать стоимость ремонта
+                </Button>
+              </div>
+            </ScrollAnimate>
           </div>
         </section>
 
         <section className="max-w-screen-2xl mx-5 md:mx-auto">
-          <h2 className="text-xl md:text-2xl text-center">
-            Узнать стоимость ремонта
-          </h2>
+          <ScrollAnimate>
+            <h2 className="text-xl md:text-2xl text-center">
+              Узнать стоимость ремонта
+            </h2>
+          </ScrollAnimate>
 
           <div className="divide-y">
             <dl className="mt-10 space-y-6">
               {dropdownList.map((item) => (
-                <Disclosure
-                  as="div"
-                  key={item.title}
-                  className="pt-6 pb-3 border-b border-black"
-                >
-                  {({ open }) => (
-                    <>
-                      <dt>
-                        <Disclosure.Button className="flex w-full items-start justify-between text-left text-black">
-                          <span className="text-xl font-semibold leading-7">
-                            {item.title}
-                          </span>
-                          <span className="ml-6 flex h-7 items-center">
-                            {open ? (
-                              <MinusSmallIcon
-                                className="h-6 w-6"
-                                aria-hidden="true"
-                              />
-                            ) : (
-                              <PlusSmallIcon
-                                className="h-6 w-6"
-                                aria-hidden="true"
-                              />
-                            )}
-                          </span>
-                        </Disclosure.Button>
-                      </dt>
-                      <Disclosure.Panel as="dd" className="mt-2 pr-12">
-                        <div
-                          className={`grid grid-cols-1 md:grid-cols-${item.columns} gap-10 py-10`}
-                        >
-                          {item.brands.map((brand) => (
-                            <Link
-                              to={brand.link}
-                              className="flex flex-col items-center justify-center space-y-3 hover:scale-105"
-                            >
-                              <img
-                                className="max-w-[10rem] max-h-[10rem]"
-                                src={brand.image}
-                                alt={brand.name}
-                              />
-                              {item.labels ? (
-                                <p className="text-center">{brand.name}</p>
-                              ) : null}
-                            </Link>
-                          ))}
-                        </div>
-                      </Disclosure.Panel>
-                    </>
-                  )}
-                </Disclosure>
+                <ScrollAnimate>
+                  <Disclosure
+                    as="div"
+                    key={item.title}
+                    className="pt-6 pb-3 border-b border-black"
+                  >
+                    {({ open }) => (
+                      <>
+                        <dt>
+                          <Disclosure.Button className="flex w-full items-start justify-between text-left text-black">
+                            <span className="text-xl font-semibold leading-7">
+                              {item.title}
+                            </span>
+                            <span className="ml-6 flex h-7 items-center">
+                              {open ? (
+                                <MinusSmallIcon
+                                  className="h-6 w-6"
+                                  aria-hidden="true"
+                                />
+                              ) : (
+                                <PlusSmallIcon
+                                  className="h-6 w-6"
+                                  aria-hidden="true"
+                                />
+                              )}
+                            </span>
+                          </Disclosure.Button>
+                        </dt>
+                        <Disclosure.Panel as="dd" className="mt-2 pr-12">
+                          <div
+                            className={`grid grid-cols-1 md:grid-cols-${item.columns} gap-10 py-10`}
+                          >
+                            {item.brands.map((brand) => (
+                              <Link
+                                to={brand.link}
+                                className="flex flex-col items-center justify-center space-y-3 hover:scale-105"
+                              >
+                                <img
+                                  className="max-w-[10rem] max-h-[10rem]"
+                                  src={brand.image}
+                                  alt={brand.name}
+                                />
+                                {item.labels ? (
+                                  <p className="text-center">{brand.name}</p>
+                                ) : null}
+                              </Link>
+                            ))}
+                          </div>
+                        </Disclosure.Panel>
+                      </>
+                    )}
+                  </Disclosure>
+                </ScrollAnimate>
               ))}
             </dl>
           </div>
@@ -336,88 +350,104 @@ const IndexPage: React.FC<PageProps> = () => {
 
         <section className="w-full py-20 bg-gray-100">
           <div className="max-w-screen-2xl mx-5 md:mx-auto space-y-20">
-            <h2 className="text-xl md:text-2xl text-center">
-              Наши преимущества
-            </h2>
+            <ScrollAnimate>
+              <h2 className="text-xl md:text-2xl text-center">
+                Наши преимущества
+              </h2>
+            </ScrollAnimate>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-y-16 gap-x-5">
               {advantages.map((advantage) => (
-                <div className="flex flex-col md:flex-row items-center text-center md:text-left space-y-5 md:space-x-10">
-                  {advantage.icon}
-                  <div className="space-y-5">
-                    <h3 className="text-xl font-bold">{advantage.title}</h3>
-                    <p className="text-gray-600 max-w-[30rem] md:max-w-full">
-                      {advantage.description}
-                    </p>
+                <ScrollAnimate>
+                  <div className="flex flex-col md:flex-row items-center text-center md:text-left space-y-5 md:space-x-10">
+                    {advantage.icon}
+                    <div className="space-y-5">
+                      <h3 className="text-xl font-bold">{advantage.title}</h3>
+                      <p className="text-gray-600 max-w-[30rem] md:max-w-full">
+                        {advantage.description}
+                      </p>
+                    </div>
                   </div>
-                </div>
+                </ScrollAnimate>
               ))}
             </div>
           </div>
         </section>
 
         <section className="max-w-screen-2xl mx-5 md:mx-auto space-y-10">
-          <h2 className="text-center text-xl md:text-2xl">
-            Цены на ремонт и обслуживание
-          </h2>
+          <ScrollAnimate>
+            <h2 className="text-center text-xl md:text-2xl">
+              Цены на ремонт и обслуживание
+            </h2>
+          </ScrollAnimate>
 
           <div className="flex justify-center">
-            <p className="max-w-[70rem] text-center text-gray-600">
-              Цены отличаются в зависимости от необходимых работ по устранению
-              неисправности, а также марки и модели кофемашины. Точную стоимость
-              мастер сможет определить только после диагностики.
-            </p>
+            <ScrollAnimate>
+              <p className="max-w-[70rem] text-center text-gray-600">
+                Цены отличаются в зависимости от необходимых работ по устранению
+                неисправности, а также марки и модели кофемашины. Точную
+                стоимость мастер сможет определить только после диагностики.
+              </p>
+            </ScrollAnimate>
           </div>
 
           <div className="pt-10 grid grid-cols-1 md:grid-cols-3 gap-12">
             {prices.map((price) => (
-              <div
-                onClick={openModalHandler}
-                className="flex flex-col justify-between space-y-10 p-5 border-2 border-black hover:scale-105 hover:cursor-pointer bg-gray-100 hover:bg-white"
-              >
-                <h3 className="text-xl font-bold">{price.title}</h3>
-                <p className="text-gray-600">{price.description}</p>
-                <p className="font-bold text-xl">{price.price}</p>
-              </div>
+              <ScrollAnimate>
+                <div
+                  onClick={openModalHandler}
+                  className="flex flex-col justify-between space-y-10 p-5 border-2 border-black hover:scale-105 hover:cursor-pointer bg-gray-100 hover:bg-white"
+                >
+                  <h3 className="text-xl font-bold">{price.title}</h3>
+                  <p className="text-gray-600">{price.description}</p>
+                  <p className="font-bold text-xl">{price.price}</p>
+                </div>
+              </ScrollAnimate>
             ))}
           </div>
-
-          <div className="flex justify-center">
-            <Button
-              onClick={openModalHandler}
-              className="bg-black hover:text-black hover:bg-white text-white"
-            >
-              Заказать ремонт
-            </Button>
-          </div>
+          <ScrollAnimate>
+            <div className="flex justify-center">
+              <Button
+                onClick={openModalHandler}
+                className="bg-black hover:text-black hover:bg-white text-white"
+              >
+                Заказать ремонт
+              </Button>
+            </div>
+          </ScrollAnimate>
         </section>
 
         <section className="w-full py-20 bg-gray-100">
           <div className="max-w-screen-2xl mx-5 md:mx-auto space-y-10 pb-10">
-            <h2 className="text-center text-xl md:text-2xl">Отзывы</h2>
+            <ScrollAnimate>
+              <h2 className="text-center text-xl md:text-2xl">Отзывы</h2>
+            </ScrollAnimate>
           </div>
 
           <div className="max-w-screen-2xl mx-5 md:mx-auto">
-            <ReviewCarousel reviews={reviews} />
+            <ScrollAnimate>
+              <ReviewCarousel reviews={reviews} />
+            </ScrollAnimate>
           </div>
         </section>
-
-        <section className="max-w-screen-2xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-5 text-center md:text-left md:space-x-20">
-          <InformationCircleIcon className="w-32 h-32 " />
-          <div className="space-y-5">
-            <h4 className="text-xl">Остались вопросы?</h4>
-            <p className="text-gray-600">
-              Закажите обратный звонок и наши специалисты свяжутся с вами в
-              ближайшее время и проконсультируют по интересующим вопросам
-            </p>
-          </div>
-          <Button
-            onClick={openModalHandler}
-            className="bg-black hover:text-black hover:bg-white text-white"
-          >
-            Перезвонить
-          </Button>
-        </section>
+        <ScrollAnimate>
+          <section className="max-w-screen-2xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-5 text-center md:text-left md:space-x-20">
+            <InformationCircleIcon className="w-32 h-32 " />
+            <div className="space-y-5">
+              <h4 className="text-xl">Остались вопросы?</h4>
+              <p className="text-gray-600">
+                Закажите обратный звонок и наши специалисты свяжутся с вами в
+                ближайшее время и проконсультируют по интересующим вопросам
+              </p>
+            </div>
+            <Button
+              onClick={openModalHandler}
+              className="bg-black hover:text-black hover:bg-white text-white"
+            >
+              Перезвонить
+            </Button>
+          </section>
+        </ScrollAnimate>
       </main>
       <Footer />
     </>

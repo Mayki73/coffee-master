@@ -6,6 +6,7 @@ import { IOrder } from "../../models/order.model";
 import { useSendEmail } from "../../services/order.services";
 import { enqueueSnackbar } from "notistack";
 import { yupResolver } from "@hookform/resolvers/yup";
+import ScrollAnimate from "../ScrollAnimate";
 
 const ContactForm: React.FC = () => {
   const ContactFormSchema = yup.object({
@@ -41,58 +42,66 @@ const ContactForm: React.FC = () => {
       className="space-y-5 pb-10 max-w-[40rem] mx-20 md:mx-auto w-full"
       onSubmit={handleSubmit(submitOrderForm)}
     >
-      <Controller
-        name="name"
-        control={control}
-        render={({ field: { onChange, value } }) => (
-          <Input
-            onChange={onChange}
-            value={value}
-            placeholder="Ваше имя"
-            error={Boolean(errors.name?.message)}
-            helperText={errors.name?.message}
-          />
-        )}
-      />
+      <ScrollAnimate>
+        <Controller
+          name="name"
+          control={control}
+          render={({ field: { onChange, value } }) => (
+            <Input
+              onChange={onChange}
+              value={value}
+              placeholder="Ваше имя"
+              error={Boolean(errors.name?.message)}
+              helperText={errors.name?.message}
+            />
+          )}
+        />
+      </ScrollAnimate>
 
-      <Controller
-        name="phone"
-        control={control}
-        render={({ field: { onChange, value } }) => (
-          <Input
-            onChange={onChange}
-            value={value}
-            mask="+375 (99) 999-99-99"
-            maskChar=" "
-            placeholder="+375 (__) ___-__-__"
-            error={Boolean(errors.phone?.message)}
-            helperText={errors.phone?.message}
-          />
-        )}
-      />
+      <ScrollAnimate>
+        <Controller
+          name="phone"
+          control={control}
+          render={({ field: { onChange, value } }) => (
+            <Input
+              onChange={onChange}
+              value={value}
+              mask="+375 (99) 999-99-99"
+              maskChar=" "
+              placeholder="+375 (__) ___-__-__"
+              error={Boolean(errors.phone?.message)}
+              helperText={errors.phone?.message}
+            />
+          )}
+        />
+      </ScrollAnimate>
 
-      <Controller
-        name="question"
-        control={control}
-        render={({ field: { onChange, value } }) => (
-          <Input
-            onChange={onChange}
-            value={value}
-            textarea
-            placeholder="Задайте нам свой вопрос! (необязательно)"
-            error={Boolean(errors.question?.message)}
-            helperText={errors.question?.message}
-          />
-        )}
-      />
+      <ScrollAnimate>
+        <Controller
+          name="question"
+          control={control}
+          render={({ field: { onChange, value } }) => (
+            <Input
+              onChange={onChange}
+              value={value}
+              textarea
+              placeholder="Задайте нам свой вопрос! (необязательно)"
+              error={Boolean(errors.question?.message)}
+              helperText={errors.question?.message}
+            />
+          )}
+        />
+      </ScrollAnimate>
 
       <div className="flex justify-center">
-        <button
-          className="bg-black hover:text-black hover:bg-white text-white px-10 py-3 h-max border-2 border-black"
-          type="submit"
-        >
-          Отправить
-        </button>
+        <ScrollAnimate>
+          <button
+            className="bg-black hover:text-black hover:bg-white text-white px-10 py-3 h-max border-2 border-black"
+            type="submit"
+          >
+            Отправить
+          </button>
+        </ScrollAnimate>
       </div>
     </form>
   );

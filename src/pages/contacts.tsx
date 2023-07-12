@@ -7,6 +7,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import queryClient from "../constants/query-client";
 import { SnackbarProvider } from "notistack";
 import { Helmet } from "react-helmet";
+import ScrollAnimate from "../components/ScrollAnimate";
 
 const contacts = [
   {
@@ -55,24 +56,30 @@ const Contacts: React.FC = () => {
         <QueryClientProvider client={queryClient}>
           <Header />
           <main className="max-w-screen-2xl mx-auto my-20 font-[Comfortaa] text-lg leading-8 tracking-wider text-gray-600 font-light space-y-10">
-            <h1 className="text-2xl font-medium text-center text-black">
-              Контакты
-            </h1>
+            <ScrollAnimate>
+              <h1 className="text-2xl font-medium text-center text-black">
+                Контакты
+              </h1>
+            </ScrollAnimate>
 
             <div className="flex justify-center items-center">
               <ul className="space-y-5">
                 {contacts.map((item) => (
-                  <li className="flex space-x-10" key={item.title}>
-                    {item.icon}
-                    <p className="text-lg">{item.value}</p>
-                  </li>
+                  <ScrollAnimate>
+                    <li className="flex space-x-10" key={item.title}>
+                      {item.icon}
+                      <p className="text-lg">{item.value}</p>
+                    </li>
+                  </ScrollAnimate>
                 ))}
               </ul>
             </div>
 
-            <h2 className="text-xl md:text-2xl font-medium text-center text-black pt-10">
-              Оставьте нам вопрос
-            </h2>
+            <ScrollAnimate>
+              <h2 className="text-xl md:text-2xl font-medium text-center text-black pt-10">
+                Оставьте нам вопрос
+              </h2>
+            </ScrollAnimate>
 
             <div className="flex justify-center w-full">
               <ContactForm />
