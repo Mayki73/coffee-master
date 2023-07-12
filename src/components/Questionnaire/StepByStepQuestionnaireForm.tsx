@@ -1,12 +1,6 @@
-import React, { useDeferredValue, useState } from "react";
+import React, { useState } from "react";
 import { IonIcon } from "@ionic/react";
-import {
-  checkmarkOutline,
-  giftOutline,
-  stopwatchOutline,
-  cashOutline,
-  checkmarkDoneCircleOutline,
-} from "ionicons/icons";
+import { checkmarkOutline, checkmarkDoneCircleOutline } from "ionicons/icons";
 import clsx from "clsx";
 import Button from "../../components/Form/Button";
 import OrderForm from "../Modal/OrderForm";

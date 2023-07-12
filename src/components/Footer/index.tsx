@@ -17,7 +17,7 @@ const contacts = [
   },
   {
     title: "Email",
-    value: "info@somemail.com",
+    value: "Coffeeremont24.by@yandex.ru",
     icon: <EnvelopeIcon className="w-7 h-7" />,
   },
 ];
