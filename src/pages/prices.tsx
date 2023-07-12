@@ -219,7 +219,7 @@ const Prices: React.FC = () => {
     <>
       <Modal open={isModalOpen} setOpen={setIsModalOpen} />
       <Helmet>
-        <title>Цены на ремонт кофемашин в Минске | Coffeemaster</title>
+        <title>Цены на ремонт кофемашин в Минске | CoffeeRemont24</title>
         <meta
           name="description"
           content="Ознакомьтесь с нашими ценами на ремонт кофемашин в Минске. Мы предлагаем профессиональные услуги по диагностике, ремонту и обслуживанию кофейного оборудования по доступным ценам. Узнайте стоимость ремонта вашей кофемашины с помощью нашего прайс-листа."
@@ -231,7 +231,7 @@ const Prices: React.FC = () => {
       </Helmet>
       <Header />
       <main className="max-w-screen-2xl mx-5 md:mx-auto my-20 font-[Comfortaa] text-base md:text-lg leading-8 tracking-wider text-gray-600 font-light space-y-10">
-        <h1 className="text-2xl md:text-4xl text-center text-black font-normal">
+        <h1 className="text-xl md:text-2xl text-center text-black font-normal">
           Цены на ремонт кофемашин
         </h1>
         <p>
@@ -393,5 +393,3 @@ const Prices: React.FC = () => {
 };
 
 export default Prices;
-
-export const Head: HeadFC = () => <title>Цены</title>;

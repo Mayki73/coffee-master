@@ -5,8 +5,7 @@ import {
   ChevronDownIcon,
   XMarkIcon,
 } from "@heroicons/react/20/solid";
-import { Dialog, Tab, Transition } from "@headlessui/react";
-import clsx from "clsx";
+import { Dialog, Transition } from "@headlessui/react";
 
 const routes = [
   {
@@ -53,13 +52,18 @@ const routes = [
     name: "КОНТАКТЫ",
     path: "/contacts",
   },
+  {
+    id: 6,
+    name: "ДОСТАВКА И ОПЛАТА",
+    path: "/delivery-and-payment",
+  },
 ];
 
 const NavBar: React.FC = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="bg-white">
+    <div className="bg-gray-100">
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="block z-40" onClose={setOpen}>
           <Transition.Child
@@ -146,7 +150,7 @@ const NavBar: React.FC = () => {
         </Dialog>
       </Transition.Root>
 
-      <nav className="flex items-end h-full space-x-6 text-lg font-[Comfortaa] font-[900] hidden lg:block lg:flex">
+      <nav className="flex items-end h-full space-x-6 text-base font-[Comfortaa] font-[900] hidden lg:block lg:flex">
         {routes.map((route) => {
           if (route.icon)
             return (
@@ -195,7 +199,7 @@ const NavBar: React.FC = () => {
       <div className="flex flex-1 items-center lg:hidden">
         <button
           type="button"
-          className="-ml-2 rounded-md bg-white p-2 text-gray-400"
+          className="-ml-2 rounded-md bg-gray-200 p-2 text-gray-400"
           onClick={() => setOpen(true)}
         >
           <span className="sr-only">Open menu</span>

@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import { useStaticQuery, type PageProps, graphql, Link } from "gatsby";
 import Header from "../components/Header";
 import Button from "../components/Form/Button";
@@ -21,6 +21,8 @@ import { Helmet } from "react-helmet";
 import { dropdownList } from "../constants/dropdown-brands-list";
 import Footer from "../components/Footer";
 import Modal from "../components/Modal";
+import ReviewCarousel from "../components/ReviewCarousel";
+import StartModal from "../components/StarterModal";
 
 const advantages = [
   {
@@ -133,8 +135,58 @@ const prices = [
   },
 ];
 
+const reviews = [
+  {
+    id: 1,
+    name: "Александр",
+    text: "Отличный сервис! Они быстро и эффективно починили мою кофемашину. Очень рекомендую!",
+  },
+  {
+    id: 2,
+    name: "Анастасия",
+    text: "CoffeeRemont24 оказал отличное обслуживание. Они исправили проблемы с завариванием моей кофемашины в кратчайшие сроки. Теперь я могу наслаждаться своим любимым кофе снова!",
+  },
+  {
+    id: 3,
+    name: "Андрей",
+    text: "Я был впечатлен профессионализмом. Они справились с ремонтом моей кофемашины с большим мастерством и дали полезные советы по обслуживанию. Спасибо!",
+  },
+  {
+    id: 4,
+    name: "Андрей",
+    text: "Быстрый и надежный сервис! Они решили проблему с помолом в моей кофемашине и даже провели ее тщательную очистку. Очень доволен!",
+  },
+  {
+    id: 5,
+    name: "Денис",
+    text: "CoffeeRemont24 превзошел мои ожидания. Они были честными о процессе ремонта и стоимости. Моя кофемашина теперь работает как новая. Отличная работа!",
+  },
+  {
+    id: 6,
+    name: "Николай",
+    text: "У меня была самая неочевидная поломка. Они оперативно диагностировали проблему с моей кофемашиной и предложили экономичное решение. Очень доволен!",
+  },
+  {
+    id: 7,
+    name: "Юлия",
+    text: "Я очень рекомендую CoffeeRemont24 для ремонта кофемашин. У них опытная команда, которая быстро починила нагревательный элемент в моей кофемашине. Теперь я могу наслаждаться горячим кофе каждое утро!",
+  },
+];
+
 const IndexPage: React.FC<PageProps> = () => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [isOpenStartModal, setIsOpenStartModal] = useState<boolean>(false);
+
+  const changeStartModalState = () => {
+    setIsOpenStartModal(!isOpenStartModal);
+  };
+
+  useEffect(() => {
+    setTimeout(() => {
+      changeStartModalState();
+    }, 30000);
+  }, []);
+
   const data = useStaticQuery(graphql`
     query {
       allFile(filter: { extension: { regex: "/(jpg|png|jpeg)/" } }) {
@@ -172,8 +224,9 @@ const IndexPage: React.FC<PageProps> = () => {
   return (
     <>
       <Modal open={isModalOpen} setOpen={setIsModalOpen} />
+      <StartModal isOpen={isOpenStartModal} setIsOpen={changeStartModalState} />
       <Helmet>
-        <title>Ремонт кофемашин в Минске | Coffeemaster</title>
+        <title>Ремонт кофемашин в Минске | CoffeeRemont24</title>
         <meta
           name="description"
           content="Комплексный ремонт кофемашин в Минске. Профессиональные услуги по диагностике, ремонту и обслуживанию кофейного оборудования. Цены, диагностика, ремонт за несколько часов. Звоните нам прямо сейчас!"
@@ -194,13 +247,13 @@ const IndexPage: React.FC<PageProps> = () => {
           }}
         >
           <div
-            className="p-2 rounded-2xl space-y-10 flex flex-col items-center"
+            className="p-2 py-6 rounded-sm space-y-10 flex flex-col items-center"
             style={{
               background:
                 "linear-gradient(180deg, rgba(101,101,101, 80%), rgba(121,121,121,60%), rgba(164,164,164,50%), rgba(208,208,208,0), rgba(255,255,255, 0))",
             }}
           >
-            <h1 className="text-2xl md:text-4xl text-center font-bold">
+            <h1 className="text-xl md:text-2xl text-center font-bold">
               Ремонт кофемашин в Минске
             </h1>
             <p className="w-full max-w-[150rem] md:max-w-[80rem] text-center text-base md:text-xl">
@@ -218,7 +271,7 @@ const IndexPage: React.FC<PageProps> = () => {
         </section>
 
         <section className="max-w-screen-2xl mx-5 md:mx-auto">
-          <h2 className="text-2xl md:text-4xl text-center">
+          <h2 className="text-xl md:text-2xl text-center">
             Узнать стоимость ремонта
           </h2>
 
@@ -281,28 +334,30 @@ const IndexPage: React.FC<PageProps> = () => {
           </div>
         </section>
 
-        <section className="max-w-screen-2xl mx-5 md:mx-auto space-y-20">
-          <h2 className="text-2xl md:text-4xl text-center">
-            Наши преимущества
-          </h2>
+        <section className="w-full py-20 bg-gray-100">
+          <div className="max-w-screen-2xl mx-5 md:mx-auto space-y-20">
+            <h2 className="text-xl md:text-2xl text-center">
+              Наши преимущества
+            </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-y-16 gap-x-5">
-            {advantages.map((advantage) => (
-              <div className="flex flex-col md:flex-row items-center text-center md:text-left space-y-5 md:space-x-10">
-                {advantage.icon}
-                <div className="space-y-5">
-                  <h3 className="text-xl font-bold">{advantage.title}</h3>
-                  <p className="text-gray-600 max-w-[30rem] md:max-w-full">
-                    {advantage.description}
-                  </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-y-16 gap-x-5">
+              {advantages.map((advantage) => (
+                <div className="flex flex-col md:flex-row items-center text-center md:text-left space-y-5 md:space-x-10">
+                  {advantage.icon}
+                  <div className="space-y-5">
+                    <h3 className="text-xl font-bold">{advantage.title}</h3>
+                    <p className="text-gray-600 max-w-[30rem] md:max-w-full">
+                      {advantage.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </section>
 
         <section className="max-w-screen-2xl mx-5 md:mx-auto space-y-10">
-          <h2 className="text-center text-2xl md:text-4xl">
+          <h2 className="text-center text-xl md:text-2xl">
             Цены на ремонт и обслуживание
           </h2>
 
@@ -318,9 +373,9 @@ const IndexPage: React.FC<PageProps> = () => {
             {prices.map((price) => (
               <div
                 onClick={openModalHandler}
-                className="flex flex-col justify-between space-y-10 p-5 border-2 border-black hover:scale-105 hover:cursor-pointer"
+                className="flex flex-col justify-between space-y-10 p-5 border-2 border-black hover:scale-105 hover:cursor-pointer bg-gray-100 hover:bg-white"
               >
-                <h3 className="text-2xl font-bold">{price.title}</h3>
+                <h3 className="text-xl font-bold">{price.title}</h3>
                 <p className="text-gray-600">{price.description}</p>
                 <p className="font-bold text-xl">{price.price}</p>
               </div>
@@ -337,10 +392,20 @@ const IndexPage: React.FC<PageProps> = () => {
           </div>
         </section>
 
+        <section className="w-full py-20 bg-gray-100">
+          <div className="max-w-screen-2xl mx-5 md:mx-auto space-y-10 pb-10">
+            <h2 className="text-center text-xl md:text-2xl">Отзывы</h2>
+          </div>
+
+          <div className="max-w-screen-2xl mx-5 md:mx-auto">
+            <ReviewCarousel reviews={reviews} />
+          </div>
+        </section>
+
         <section className="max-w-screen-2xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-5 text-center md:text-left md:space-x-20">
           <InformationCircleIcon className="w-32 h-32 " />
           <div className="space-y-5">
-            <h4 className="text-2xl">Остались вопросы?</h4>
+            <h4 className="text-xl">Остались вопросы?</h4>
             <p className="text-gray-600">
               Закажите обратный звонок и наши специалисты свяжутся с вами в
               ближайшее время и проконсультируют по интересующим вопросам

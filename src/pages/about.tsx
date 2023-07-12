@@ -43,7 +43,7 @@ const About: React.FC = () => {
     <>
       <Helmet>
         <title>
-          О нас - Специалисты по ремонту кофемашин в Минске | Coffeemaster
+          О нас - Специалисты по ремонту кофемашин в Минске | CoffeeRemont24
         </title>
         <meta
           name="description"
@@ -56,7 +56,7 @@ const About: React.FC = () => {
       </Helmet>
       <Header />
       <main className="max-w-screen-2xl mx-5 md:mx-auto my-20 font-[Comfortaa] text-base md:text-lg leading-8 tracking-wider text-gray-600 font-light">
-        <h1 className="text-2xl md:text-4xl text-center text-black font-normal">
+        <h1 className="text-xl md:text-2xl text-center text-black font-normal">
           О нас
         </h1>
 
@@ -73,7 +73,7 @@ const About: React.FC = () => {
           Сеть кофеен, которая угощает Вас кофе каждый день, наша работа.
         </p>
 
-        <h2 className="text-2xl md:text-4xl text-center mt-20 text-black font-normal">
+        <h2 className="text-xl md:text-2xl text-center mt-20 text-black font-normal">
           Какие работы мы выполняем:
         </h2>
 
@@ -99,14 +99,14 @@ const About: React.FC = () => {
           </ul>
         </div>
 
-        <h3 className="text-2xl md:text-4xl text-center mt-20 text-black font-normal">
+        <h3 className="text-xl md:text-2xl text-center mt-20 text-black font-normal">
           Как мы работаем?
         </h3>
 
         <div className="flex flex-col md:flex-row justify-between items-center space-y-10 mt-10">
           <div className="flex flex-col items-center space-y-5 max-w-[20rem]">
             {workSteps[0].icon}
-            <h4 className="text-xl md:text-2xl text-center text-black font-normal">
+            <h4 className="text-xl md:text-xl text-center text-black font-normal">
               {workSteps[0].title}
             </h4>
             <p className="text-base md:text-lg text-center text-gray-600 font-light">
@@ -118,7 +118,7 @@ const About: React.FC = () => {
 
           <div className="flex flex-col items-center space-y-5 max-w-[20rem]">
             {workSteps[1].icon}
-            <h4 className="text-xl md:text-2xl text-center text-black font-normal">
+            <h4 className="text-xl md:text-xl text-center text-black font-normal">
               {workSteps[1].title}
             </h4>
             <p className="text-base md:text-lg text-center text-gray-600 font-light">
@@ -130,7 +130,7 @@ const About: React.FC = () => {
 
           <div className="flex flex-col items-center space-y-5 max-w-[20rem]">
             {workSteps[2].icon}
-            <h4 className="text-xl md:text-2xl text-center text-black font-normal">
+            <h4 className="text-xl md:text-xl text-center text-black font-normal">
               {workSteps[2].title}
             </h4>
             <p className="text-base md:text-lg text-center text-gray-600 font-light">

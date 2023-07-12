@@ -59,11 +59,11 @@ const Repair: React.FC = ({ pageContext }: any) => {
       <Helmet>
         <title>
           Ремонт кофемашин: Бытовые, Встраиваемые, Профессиональные, Вендинговые
-          | Coffeemaster
+          | CoffeeRemont24
         </title>
         <meta
           name="description"
-          content="Coffeemaster предлагает профессиональные услуги по ремонту кофемашин разных категорий. Выберите нужную категорию: Бытовые кофемашины, Встраиваемые, Профессиональные или Вендинговые, и ознакомьтесь со списком брендов, которые мы обслуживаем."
+          content="CoffeeRemont24 предлагает профессиональные услуги по ремонту кофемашин разных категорий. Выберите нужную категорию: Бытовые кофемашины, Встраиваемые, Профессиональные или Вендинговые, и ознакомьтесь со списком брендов, которые мы обслуживаем."
         />
         <meta
           name="keywords"
@@ -72,13 +72,13 @@ const Repair: React.FC = ({ pageContext }: any) => {
       </Helmet>
       <Header />
       <main className="max-w-screen-2xl mx-5 md:mx-auto my-20 font-[Comfortaa] text-base md:text-lg leading-8 tracking-wider text-gray-600 font-light">
-        <h1 className="text-2xl md:text-4xl text-center text-black font-medium">
+        <h1 className="text-xl md:text-2xl text-center text-black font-medium">
           Ремонт кофемашин
         </h1>
 
         <div className="space-y-10 mt-10 border-b border-black pb-20">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-5 md:space-y-0">
-            <h2 className="text-xl md:text-2xl text-black font-medium">
+            <h2 className="text-xl md:text-xl text-black font-medium">
               <Link
                 to="household"
                 className="flex space-x-5 items-center justify-center hover:border-b-2 hover:border-black transition-all duration-100 text-gray-600 hover:text-black"
@@ -123,7 +123,7 @@ const Repair: React.FC = ({ pageContext }: any) => {
 
         <div className="space-y-10 mt-20 border-b border-black pb-20">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-5 md:space-y-0">
-            <h2 className="text-xl md:text-2xl text-black font-medium">
+            <h2 className="text-xl md:text-xl text-black font-medium">
               <Link
                 to="built-in"
                 className="flex space-x-5 items-center justify-center hover:border-b-2 hover:border-black transition-all duration-100 text-gray-600 hover:text-black"
@@ -169,7 +169,7 @@ const Repair: React.FC = ({ pageContext }: any) => {
 
         <div className="space-y-10 mt-20 border-b border-black pb-20">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-5 md:space-y-0">
-            <h2 className="text-xl md:text-2xl text-black font-medium">
+            <h2 className="text-xl md:text-xl text-black font-medium">
               <Link
                 to="professional"
                 className="flex space-x-5 items-center justify-center hover:border-b-2 hover:border-black transition-all duration-100 text-gray-600 hover:text-black"
@@ -232,7 +232,7 @@ const Repair: React.FC = ({ pageContext }: any) => {
 
         <div className="space-y-10 mt-20 pb-20">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-5 md:space-y-0">
-            <h2 className="text-xl md:text-2xl text-black font-medium">
+            <h2 className="text-xl md:text-xl text-black font-medium">
               <Link
                 to="vending"
                 className="flex space-x-5 items-center justify-center hover:border-b-2 hover:border-black transition-all duration-100 text-gray-600 hover:text-black"

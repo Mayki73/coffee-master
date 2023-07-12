@@ -3,19 +3,12 @@ import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { IOrder } from "../../models/order.model";
-import Input from "../Form/Input";
 import { useSendEmail } from "../../services/order.services";
+import Input from "../../components/Form/Input";
+import { enqueueSnackbar } from "notistack";
 
-interface IProps {
-  closeModal: () => void;
-  answers: string[];
-}
-
-const OrderForm: React.FC<IProps> = ({ closeModal, answers }) => {
-  const { mutate: sendEmail } = useSendEmail(() => {
-    closeModal();
-  });
-  const OrderFormSchema = yup.object({
+const ContactForm: React.FC = () => {
+  const ContactFormSchema = yup.object({
     name: yup.string().required("Пожалуйста, укажите свое имя!"),
     phone: yup.string().required("Пожалуйста, укажите свой номер телефона!"),
     question: yup.string(),
@@ -23,23 +16,30 @@ const OrderForm: React.FC<IProps> = ({ closeModal, answers }) => {
   });
 
   const useFormReturn = useForm<IOrder>({
-    resolver: yupResolver(OrderFormSchema),
+    resolver: yupResolver(ContactFormSchema),
   });
 
   const submitOrderForm = (data: IOrder) => {
-    sendEmail({ ...data, answers: answers?.join(", ") });
+    sendEmail(data);
   };
 
   const {
     handleSubmit,
     control,
     formState: { errors },
+    setValue,
   } = useFormReturn;
+
+  const { mutate: sendEmail } = useSendEmail(() => {
+    enqueueSnackbar("Ваше сообщение отправлено!", { variant: "success" });
+    setValue("name", "");
+    setValue("phone", "");
+    setValue("question", "");
+  });
 
   return (
     <form
-      className="space-y-5 pb-10"
-      id="order"
+      className="space-y-5 pb-10 max-w-[40rem] mx-20 md:mx-auto w-full"
       onSubmit={handleSubmit(submitOrderForm)}
     >
       <Controller
@@ -72,17 +72,31 @@ const OrderForm: React.FC<IProps> = ({ closeModal, answers }) => {
         )}
       />
 
+      <Controller
+        name="question"
+        control={control}
+        render={({ field: { onChange, value } }) => (
+          <Input
+            onChange={onChange}
+            value={value}
+            textarea
+            placeholder="Задайте нам свой вопрос! (необязательно)"
+            error={Boolean(errors.question?.message)}
+            helperText={errors.question?.message}
+          />
+        )}
+      />
+
       <div className="flex justify-center">
         <button
+          className="bg-black hover:text-black hover:bg-white text-white px-10 py-3 h-max border-2 border-black"
           type="submit"
-          form="order"
-          className="px-10 py-3 h-max border-2 border-black bg-black hover:text-black hover:bg-white text-white"
         >
-          Отправить заявку
+          Отправить
         </button>
       </div>
     </form>
   );
 };
 
-export default OrderForm;
+export default ContactForm;

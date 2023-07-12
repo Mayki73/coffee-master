@@ -7,10 +7,11 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Button from "../components/Form/Button";
 import Modal from "../components/Modal";
+import { Helmet } from "react-helmet";
 
 const MulfunctionTemplate: React.FC = ({ pageContext }: any) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { title, description, prices } = pageContext.mulfunction;
+  const { title, description, prices, seo } = pageContext.mulfunction;
   const { advantages } = pageContext;
 
   const openModalHandler = () => {
@@ -20,9 +21,14 @@ const MulfunctionTemplate: React.FC = ({ pageContext }: any) => {
   return (
     <>
       <Modal open={isModalOpen} setOpen={setIsModalOpen} />
+      <Helmet>
+        <title>{seo.title}</title>
+        <meta name="description" content={seo.description} />
+        <meta name="keywords" content={seo.keywords} />
+      </Helmet>
       <Header />
       <main className="max-w-screen-2xl mx-5 md:mx-auto my-20 font-[Comfortaa] text-base md:text-lg leading-8 tracking-wider text-gray-600 font-light space-y-10">
-        <h1 className="text-4xl text-center font-bold text-black">{title}</h1>
+        <h1 className="text-2xl text-center font-bold text-black">{title}</h1>
         <p>{description}</p>
 
         <div className="mt-10 flex justify-center">
@@ -35,7 +41,7 @@ const MulfunctionTemplate: React.FC = ({ pageContext }: any) => {
         </div>
 
         <section className="space-y-20 pt-10">
-          <h2 className="text-4xl text-black text-center">
+          <h2 className="text-2xl text-black text-center">
             Рекомендации или возможные причины поломки
           </h2>
 
@@ -49,7 +55,7 @@ const MulfunctionTemplate: React.FC = ({ pageContext }: any) => {
                 <li
                   key={price.name}
                   onClick={openModalHandler}
-                  className="flex flex-col md:flex-row items-center space-y-5 md:space-x-10 p-5 border-2 border-black hover:scale-105 hover:cursor-pointer"
+                  className="flex flex-col md:flex-row items-center space-y-5 md:space-x-10 p-5 border-2 border-black hover:scale-105 hover:cursor-pointer bg-gray-100 hover:bg-white"
                 >
                   {price.type === "advise" ? (
                     <QuestionMarkCircleIcon className="w-32 h-32 text-black" />
@@ -67,7 +73,7 @@ const MulfunctionTemplate: React.FC = ({ pageContext }: any) => {
         </section>
 
         <section className="pt-10 space-y-10">
-          <h2 className="text-2xl md:text-4xl text-center text-black">
+          <h2 className="text-xl md:text-2xl text-center text-black">
             Наши преимущества
           </h2>
 
@@ -75,7 +81,7 @@ const MulfunctionTemplate: React.FC = ({ pageContext }: any) => {
             {advantages.map((advantage: any) => (
               <li
                 key={advantages.title}
-                className="p-5 border-2 border-black space-y-5"
+                className="p-5 border-2 border-black space-y-5 bg-gray-100 hover:bg-white"
               >
                 <h3 className="text-xl text-black font-bold">
                   {advantage.title}

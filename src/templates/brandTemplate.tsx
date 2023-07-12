@@ -12,10 +12,11 @@ import Button from "../components/Form/Button";
 import { Disclosure } from "@headlessui/react";
 import { graphql, useStaticQuery } from "gatsby";
 import Modal from "../components/Modal";
+import { Helmet } from "react-helmet";
 
 const BrandTemplate: React.FC = ({ pageContext }: any) => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
-  const { name, title, description, logo, service, mulfunctions, models } =
+  const { name, title, description, logo, service, mulfunctions, models, seo } =
     pageContext.brand;
 
   const data = useStaticQuery(graphql`
@@ -59,9 +60,14 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
   return (
     <>
       <Modal open={isModalOpen} setOpen={setIsModalOpen} />
+      <Helmet>
+        <title>{seo.title}</title>
+        <meta name="description" content={seo.description} />
+        <meta name="keywords" content={seo.keywords} />
+      </Helmet>
       <Header />
       <main className="max-w-screen-2xl mx-5 md:mx-auto my-20 font-[Comfortaa] text-base md:text-lg leading-8 tracking-wider text-gray-600 font-light space-y-10">
-        <h1 className="text-2xl md:text-4xl font-bold text-black text-center">
+        <h1 className="text-xl md:text-2xl font-bold text-black text-center">
           {title}
         </h1>
         <div className="flex flex-col md:flex-row items-center space-y-5 md:space-x-10">
@@ -70,7 +76,152 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
         </div>
 
         <section className="pt-10 space-y-10">
-          <h2 className="text-center text-2xl md:text-4xl text-black">
+          <h2 className="text-center text-xl md:text-2xl text-black">
+            Преимущества и условия
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div
+              className="space-y-5 p-5 border-2 border-black bg-gray-100 hover:bg-white hover:cursor-pointer hover:scale-105"
+              onClick={openModalHandler}
+            >
+              <h3 className="text-lg font-bold text-black">
+                Гарантия – полгода
+              </h3>
+
+              <p>
+                Гарантия на ремонт кофемашины{" "}
+                {name[0].toUpperCase() + name.slice(1)} составляет 6 месяцев. Мы
+                не являемся посредниками, имеем достаточно опыта и уверены в
+                качестве своей работы. Поэтому можем гарантировать ее
+                документально.
+              </p>
+            </div>
+            <div
+              className="space-y-5 p-5 border-2 border-black bg-gray-100 hover:bg-white hover:cursor-pointer hover:scale-105"
+              onClick={openModalHandler}
+            >
+              <h3 className="text-lg font-bold text-black">
+                Работаем по договору
+              </h3>
+
+              <p>
+                Мы работаем с физическими и юридическими лицами, по наличному и
+                безналичному расчету. Принимаем к оплате карты: Visa, Master
+                Card, МИР. Не берем предоплату и предупреждаем заранее, если
+                стоимость ремонта может измениться
+              </p>
+            </div>
+
+            <div
+              className="space-y-5 p-5 border-2 border-black bg-gray-100 hover:bg-white hover:cursor-pointer hover:scale-105"
+              onClick={openModalHandler}
+            >
+              <h3 className="text-lg font-bold text-black">Бесплатно всегда</h3>
+
+              <ul className="space-y-5 list-disc list-inside">
+                <li>Диагностика</li>
+                <li>Консультация</li>
+              </ul>
+            </div>
+
+            <div
+              className="space-y-5 p-5 border-2 border-black bg-gray-100 hover:bg-white hover:cursor-pointer hover:scale-105"
+              onClick={openModalHandler}
+            >
+              <h3 className="text-lg font-bold text-black">Скидки</h3>
+
+              <ul className="space-y-5 list-disc list-inside">
+                <li>За ремонт нескольких кофемашин</li>
+                <li>Мы часто проводим различные акции</li>
+                <li>
+                  Оставьте заявку прямо сейчас и получите свой первый подарок
+                </li>
+              </ul>
+            </div>
+
+            <div
+              className="space-y-5 p-5 border-2 border-black bg-gray-100 hover:bg-white hover:cursor-pointer hover:scale-105"
+              onClick={openModalHandler}
+            >
+              <h3 className="text-lg font-bold text-black">
+                Выезд домой или в офис
+              </h3>
+
+              <p>
+                Для вашего удобства мы осуществляем выездной ремонт и
+                обслуживание кофемашин {name[0].toUpperCase() + name.slice(1)}:
+                на дому, в офисе, в кафе или ресторане.
+              </p>
+            </div>
+
+            <div
+              className="space-y-5 p-5 border-2 border-black bg-gray-100 hover:bg-white hover:cursor-pointer hover:scale-105"
+              onClick={openModalHandler}
+            >
+              <h3 className="text-lg font-bold text-black">Срочный ремонт</h3>
+
+              <p>
+                Если вам требуется экспресс ремонт кофемашины{" "}
+                {name[0].toUpperCase() + name.slice(1)} – мы сделаем его всего
+                за 2 часа с момента вашего обращения. Не теряйте ни минуты –
+                звоните!
+              </p>
+            </div>
+
+            <div
+              className="space-y-5 p-5 border-2 border-black bg-gray-100 hover:bg-white hover:cursor-pointer hover:scale-105"
+              onClick={openModalHandler}
+            >
+              <h3 className="text-lg font-bold text-black">Опытные мастера</h3>
+
+              <ul className="space-y-5 list-disc list-inside">
+                <li>
+                  У всех мастеров огромный опыт в ремонте кофемашин и кофеварок{" "}
+                  {name[0].toUpperCase() + name.slice(1)} различной степени
+                  сложности
+                </li>
+                <li>
+                  Все мастера в штате компании, мы не отдаем работы сторонним
+                  специалистам, потому что ценим качество
+                </li>
+                <li>
+                  Научим вас проводить необходимые процедуры по обслуживанию и
+                  очистке кофемашин {name[0].toUpperCase() + name.slice(1)}.
+                </li>
+              </ul>
+            </div>
+
+            <div
+              className="space-y-5 p-5 border-2 border-black bg-gray-100 hover:bg-white hover:cursor-pointer hover:scale-105"
+              onClick={openModalHandler}
+            >
+              <h3 className="text-lg font-bold text-black">
+                Оригинальные запчасти
+              </h3>
+
+              <ul className="space-y-5 list-disc list-inside">
+                <li>
+                  Мы закупаем только оригинальные запчасти{" "}
+                  {name[0].toUpperCase() + name.slice(1)} от производителя у
+                  проверенных поставщиков
+                </li>
+                <li>
+                  Часто выходящие из строя детали{" "}
+                  {name[0].toUpperCase() + name.slice(1)} уже в наличии у
+                  мастера, поэтому ремонт занимает не более трех часов.
+                </li>
+                <li>
+                  Вы можете приобрести профессиональную химию для обслуживания
+                  {name[0].toUpperCase() + name.slice(1)} у наших мастеров.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section className="pt-10 space-y-10">
+          <h2 className="text-center text-xl md:text-2xl text-black">
             Цены на ремонт бренда {name.toUpperCase()}
           </h2>
 
@@ -79,9 +230,9 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
               <div
                 key={mulfunction.title}
                 onClick={openModalHandler}
-                className="border-2 border-black p-5 space-y-5 hover:scale-105 hover:cursor-pointer"
+                className="border-2 border-black p-5 space-y-5 hover:scale-105 hover:cursor-pointer bg-gray-100 hover:bg-white"
               >
-                <h3 className="text-lg md:text-2xl font-bold text-black p-6">
+                <h3 className="text-lg md:text-xl font-bold text-black p-6">
                   {mulfunction.title}
                 </h3>
                 <p>{mulfunction.description}</p>
@@ -105,7 +256,7 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
         </section>
 
         <section className="pt-10">
-          <h2 className="text-2xl md:text-4xl text-black text-center">
+          <h2 className="text-xl md:text-2xl text-black text-center">
             Ремонтируем модели
           </h2>
 
@@ -160,7 +311,7 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
         </section>
 
         <section className="pt-10 space-y-10">
-          <h2 className="text-2xl md:text-4xl text-black text-center">
+          <h2 className="text-xl md:text-2xl text-black text-center">
             Не нашли свою модель?
           </h2>
 
@@ -181,12 +332,12 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
         </section>
 
         <section className="space-y-10 pt-10">
-          <h2 className="text-2xl md:text-4xl text-center text-black">
+          <h2 className="text-xl md:text-2xl text-center text-black">
             Обслуживание кофемашин {name}
           </h2>
           <p>{service.description}</p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 bg-gray-100 hover:bg-white">
             <div
               className="p-5 space-y-5 border-2 border-black hover:scale-105 hover:cursor-pointer"
               onClick={openModalHandler}
@@ -200,7 +351,7 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
             </div>
 
             <div
-              className="p-5 space-y-5 border-2 border-black hover:scale-105 hover:cursor-pointer"
+              className="p-5 space-y-5 border-2 border-black hover:scale-105 hover:cursor-pointer bg-gray-100 hover:bg-white"
               onClick={openModalHandler}
               key="service"
             >

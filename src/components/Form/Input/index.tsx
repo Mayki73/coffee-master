@@ -30,7 +30,7 @@ const Input: React.FC<IProps> = ({
           mask={mask!}
           maskChar={maskChar}
           className={clsx(
-            "w-full border-b-2 border-black outline-none text-xl py-1 active:border-green-500 focus:border-green-500",
+            "w-full border-b-2 border-black outline-none text-xl py-1 active:border-gray-500 focus:border-gray-500",
             {
               "border-red-500": error,
             },
@@ -41,7 +41,7 @@ const Input: React.FC<IProps> = ({
       ) : (
         <textarea
           className={clsx(
-            "w-full h-fit border-b-2 border-black outline-none text-xl py-1 active:border-green-500 focus:border-green-500",
+            "w-full h-fit border-b-2 border-black outline-none text-xl py-1 active:border-gray-500 focus:border-gray-500",
             {
               "border-red-500": error,
             },

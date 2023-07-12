@@ -171,7 +171,7 @@ const MachineTypeTemplate: React.FC = ({ pageContext }: any) => {
       </Helmet>
       <Header />
       <main className="max-w-screen-2xl mx-5 md:mx-auto my-20 font-[Comfortaa] text-base md:text-lg leading-8 tracking-wider text-gray-600 font-light space-y-10">
-        <h1 className="text-2xl md:text-4xl text-black font-medium text-center">
+        <h1 className="text-xl md:text-2xl text-black font-medium text-center">
           {title}
         </h1>
 
@@ -188,7 +188,7 @@ const MachineTypeTemplate: React.FC = ({ pageContext }: any) => {
           </div>
         )}
 
-        <h2 className="text-2xl md:text-4xl md:text-4xl text-black text-center pt-10">
+        <h2 className="text-xl md:text-2xl md:text-2xl text-black text-center pt-10">
           Выберите бренд
         </h2>
         <div className="gridCol">
@@ -205,7 +205,7 @@ const MachineTypeTemplate: React.FC = ({ pageContext }: any) => {
           })}
         </div>
 
-        <h3 className="text-2xl md:text-4xl text-center text-black pt-10">
+        <h3 className="text-xl md:text-2xl text-center text-black pt-10">
           Не нашли свою марку?
         </h3>
         <p>
@@ -215,7 +215,7 @@ const MachineTypeTemplate: React.FC = ({ pageContext }: any) => {
           как это сделать и сможем починить вашу кофемашину!
         </p>
 
-        <h4 className="text-2xl md:text-4xl text-center text-black pt-10">
+        <h4 className="text-xl md:text-2xl text-center text-black pt-10">
           Преимущества
         </h4>
 
@@ -236,7 +236,7 @@ const MachineTypeTemplate: React.FC = ({ pageContext }: any) => {
           ))}
         </div>
 
-        <h4 className="text-4xl text-center text-black pt-10">
+        <h4 className="text-2xl text-center text-black pt-10">
           Цены на {title.toLowerCase()}
         </h4>
 

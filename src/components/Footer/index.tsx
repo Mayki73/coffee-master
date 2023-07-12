@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
     <footer className="bg-black text-white font-[Comfortaa] text-base md:text-lg">
       <div className="flex flex-col md:flex-row space-y-10 md:space-y-0 justify-between max-w-screen-2xl mx-5 md:mx-auto py-10 md:py-10 p-0 md:p-10">
         <div className="space-y-10">
-          <h2 className="text-2xl font-bold">Домашние</h2>
+          <h2 className="text-xl font-bold">Домашние</h2>
           <ul className="space-y-2">
             {dropdownList[0].brands.map((item) => (
               <li key={item.name}>
@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
           </ul>
         </div>
         <div className="space-y-10">
-          <h2 className="text-2xl font-bold">Ремонт</h2>
+          <h2 className="text-xl font-bold">Ремонт</h2>
           <ul className="space-y-2">
             {repairList.map((item) => (
               <li key={item.title}>
@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="space-y-10">
-          <h2 className="text-2xl font-bold">Контакты</h2>
+          <h2 className="text-xl font-bold">Контакты</h2>
           <ul className="space-y-5">
             {contacts.map((item) => (
               <li className="flex space-x-10" key={item.title}>

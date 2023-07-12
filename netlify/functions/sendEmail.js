@@ -10,14 +10,14 @@ exports.handler = async (event) => {
       pass: "xjtsmyemkrbdvzlq",
     },
   });
-  const { phone, name } = JSON.parse(event.body);
+  const { phone, name, question, answers } = JSON.parse(event.body);
   if (phone === "+375 () - -")
     return {
       statusCode: 500,
       body: "Произошла ошибка!",
     };
 
-  const subject = `Новая заявка из Coffeemaster`;
+  const subject = `Новая заявка из CoffeeRemont24`;
 
   const mailOptions = {
     from: "servicecoffee.5upport@yandex.ru",
@@ -45,13 +45,15 @@ exports.handler = async (event) => {
           </head>
           <body>
           <div class="container">
-          <h1>Новая заявка из Coffeemaster</h1>
+          <h1>Новая заявка из CoffeeRemont24</h1>
           <p><span>Дата:</span> ${new Date(
             new Date().setHours(new Date().getHours() + 3)
           ).toLocaleString()}</p>
           <p><span>Имя:</span> ${name}</p>
           <p><span>Телефон:</span> ${phone}</p>
-            <p>С уважением, Coffeemaster</p>
+          ${question ? "<p><span>Вопрос:</span> " + question + "</p>" : ""}
+          <p><span>Результат теста:</span> ${answers ? answers : "-"}</p>
+            <p>С уважением, CoffeeRemont24</p>
         </div>
           </body>
         </html>

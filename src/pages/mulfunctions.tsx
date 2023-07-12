@@ -96,10 +96,10 @@ const Mulfunctions: React.FC = () => {
     <>
       <Modal open={isModalOpen} setOpen={setIsModalOpen} />
       <Helmet>
-        <title>Распространенные неисправности кофемашин | Coffeemaster</title>
+        <title>Распространенные неисправности кофемашин | CoffeeRemont24</title>
         <meta
           name="description"
-          content="Узнайте о распространенных неисправностях кофемашин и как мы можем помочь в их ремонте. Coffeemaster предлагает профессиональные услуги по диагностике и исправлению проблем с кофеоборудованием. Быстро и надежно устраняем все типы неисправностей."
+          content="Узнайте о распространенных неисправностях кофемашин и как мы можем помочь в их ремонте. CoffeeRemont24 предлагает профессиональные услуги по диагностике и исправлению проблем с кофеоборудованием. Быстро и надежно устраняем все типы неисправностей."
         />
         <meta
           name="keywords"
@@ -108,7 +108,7 @@ const Mulfunctions: React.FC = () => {
       </Helmet>
       <Header />
       <main className="max-w-screen-2xl mx-5 md:mx-auto my-20 font-[Comfortaa] text-base md:text-lg leading-8 tracking-wider text-gray-600 font-light space-y-10">
-        <h1 className="text-2xl md:text-4xl text-center text-black font-medium">
+        <h1 className="text-xl md:text-2xl text-center text-black font-medium">
           Неисправности
         </h1>
         <p>
@@ -123,7 +123,7 @@ const Mulfunctions: React.FC = () => {
             <Link
               key={mulfunction.title}
               to={mulfunction.link}
-              className="flex flex-col items-center justify-center border-2 border-black p-5 max-h-[15rem] h-full hover:scale-105"
+              className="flex flex-col items-center justify-center border-2 border-black p-5 max-h-[15rem] h-full hover:scale-105 bg-gray-100 hover:bg-white"
             >
               <IonIcon className="w-10 h-10" icon={mulfunction.icon} />
               <p className="text-center max-w-[16rem]">{mulfunction.title}</p>
@@ -131,7 +131,7 @@ const Mulfunctions: React.FC = () => {
           ))}
         </div>
 
-        <h2 className="text-2xl md:text-4xl text-center text-black font-medium pt-10">
+        <h2 className="text-xl md:text-2xl text-center text-black font-medium pt-10">
           Как понять что ваша кофемашина сломалась?
         </h2>
 
@@ -199,5 +199,3 @@ const Mulfunctions: React.FC = () => {
 };
 
 export default Mulfunctions;
-
-export const Head: HeadFC = () => <title>Неисправности</title>;
