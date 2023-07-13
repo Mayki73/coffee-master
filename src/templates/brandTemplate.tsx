@@ -53,6 +53,7 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
       return (
         <GatsbyImage
           image={image.node.childImageSharp.gatsbyImageData}
+          style={{ width: "60%" }}
           alt={title}
         />
       );
@@ -80,6 +81,9 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
     // Return a placeholder or fallback image if desired
     return <img src={image} alt={`Image: ${image}`} />;
   };
+
+  console.log("logo", logo);
+  console.log("image", image);
 
   const openModalHandler = () => {
     setIsModalOpen(true);
