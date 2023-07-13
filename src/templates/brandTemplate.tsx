@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import {
   ChatBubbleLeftEllipsisIcon,
   MinusSmallIcon,
@@ -17,8 +17,17 @@ import ScrollAnimate from "../components/ScrollAnimate";
 
 const BrandTemplate: React.FC = ({ pageContext }: any) => {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
-  const { name, title, description, logo, service, mulfunctions, models, seo } =
-    pageContext.brand;
+  const {
+    name,
+    title,
+    description,
+    logo,
+    service,
+    mulfunctions,
+    models,
+    seo,
+    image,
+  } = pageContext.brand;
 
   const data = useStaticQuery(graphql`
     query {
@@ -35,7 +44,7 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
     }
   `);
 
-  const getImage = () => {
+  const getLogo = () => {
     const image = data.allFile.edges.find(({ node }: any) => {
       return node.relativePath === logo;
     });
@@ -44,7 +53,6 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
       return (
         <GatsbyImage
           image={image.node.childImageSharp.gatsbyImageData}
-          style={{ width: "60%" }}
           alt={title}
         />
       );
@@ -52,6 +60,25 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
 
     // Return a placeholder or fallback image if desired
     return <img src={logo} alt={`Image: ${logo}`} />;
+  };
+
+  const getImage = () => {
+    const img = data.allFile.edges.find(({ node }: any) => {
+      return node.relativePath === image;
+    });
+
+    if (image) {
+      return (
+        <GatsbyImage
+          image={img.node.childImageSharp.gatsbyImageData}
+          style={{ width: "70%" }}
+          alt={title}
+        />
+      );
+    }
+
+    // Return a placeholder or fallback image if desired
+    return <img src={image} alt={`Image: ${image}`} />;
   };
 
   const openModalHandler = () => {
@@ -77,7 +104,7 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
         <ScrollAnimate>
           <div className="flex flex-col md:flex-row items-center space-y-5 md:space-x-10">
             <p>{description}</p>
-            {getImage()}
+            {getLogo()}
           </div>
         </ScrollAnimate>
 
@@ -369,7 +396,10 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
           </ScrollAnimate>
 
           <ScrollAnimate>
-            <p>{service.description}</p>
+            <div className="flex items-center justify-center grid grid-cols-1 md:grid-cols-4 space-y-5 md:space-x-10">
+              <p className="col-span-3">{service.description}</p>
+              {getImage()}
+            </div>
           </ScrollAnimate>
 
           <ScrollAnimate>
