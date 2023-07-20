@@ -12,18 +12,21 @@ import ScrollAnimate from "../components/ScrollAnimate";
 const contacts = [
   {
     title: "Адрес",
-    value: "г. Москва, ул. Ленина, д. 1",
+    value: "г. Минск, ул. Кирилла Туровского, д. 6",
     icon: <MapPinIcon className="w-7 h-7" />,
+    link: "https://goo.gl/maps/kbKTSwr7cnDWSRME7",
   },
   {
     title: "Телефон",
-    value: "+7 (495) 555-55-55",
+    value: "+375 (33) 348-24-82",
     icon: <PhoneIcon className="w-7 h-7" />,
+    link: "tel:+375333482482",
   },
   {
     title: "Email",
     value: "Coffeeremont24.by@yandex.ru",
     icon: <EnvelopeIcon className="w-7 h-7" />,
+    link: "mailto:Coffeeremont24.by@yandex.ru",
   },
 ];
 
@@ -55,7 +58,7 @@ const Contacts: React.FC = () => {
         </Helmet>
         <QueryClientProvider client={queryClient}>
           <Header />
-          <main className="max-w-screen-2xl mx-auto my-20 font-[Comfortaa] text-lg leading-8 tracking-wider text-gray-600 font-light space-y-10">
+          <main className="max-w-screen-2xl mx-5 md:mx-auto my-20 font-[Comfortaa] text-lg leading-8 tracking-wider text-gray-600 font-light space-y-10">
             <ScrollAnimate>
               <h1 className="text-2xl font-medium text-center text-black">
                 Контакты
@@ -66,9 +69,13 @@ const Contacts: React.FC = () => {
               <ul className="space-y-5">
                 {contacts.map((item) => (
                   <ScrollAnimate>
-                    <li className="flex space-x-10" key={item.title}>
+                    <li className="flex flex-col md:flex-row space-y-6 md:space-x-10" key={item.title}>
+                      <div className="w-full md:w-max flex justify-center md:justify-end items-end">
                       {item.icon}
-                      <p className="text-lg">{item.value}</p>
+                      </div>
+                      <a href={item.link} target="_blank" className="text-lg text-center md:text-start">
+                        {item.value}
+                      </a>
                     </li>
                   </ScrollAnimate>
                 ))}

@@ -2,8 +2,8 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `coffeemaster`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: `coffeeremont24`,
+    siteUrl: `https://www.coffeeremont24.by`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -19,6 +19,12 @@ const config: GatsbyConfig = {
       resolve: "gatsby-plugin-manifest",
       options: {
         icon: "src/images/brands/icon-coffeeremont.png", // or the path to your favicon file
+      },
+    },
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        output: "/sitemap.xml", // Output path for the sitemap
       },
     },
     "gatsby-transformer-sharp",

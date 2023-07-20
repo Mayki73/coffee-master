@@ -93,16 +93,16 @@ const ContactForm: React.FC = () => {
         />
       </ScrollAnimate>
 
-      <div className="flex justify-center">
-        <ScrollAnimate>
+      <ScrollAnimate>
+        <div className="w-full flex justify-center items-center">
           <button
             className="bg-black hover:text-black hover:bg-white text-white px-10 py-3 h-max border-2 border-black"
             type="submit"
           >
             Отправить
           </button>
-        </ScrollAnimate>
-      </div>
+        </div>
+      </ScrollAnimate>
     </form>
   );
 };
