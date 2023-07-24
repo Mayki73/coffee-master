@@ -3,6 +3,6 @@ import React from "react";
 
 export const wrapPageElement = ({ element }) => (
   <html lang="ru">
-    <head>{element}</head>
+    <body>{element}</body>
   </html>
 );

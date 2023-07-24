@@ -104,8 +104,8 @@ const NavBar: React.FC = () => {
                   {routes.map((route) => {
                     if (route.icon) {
                       return (
-                        <>
-                          <div key={route.id}>
+                        <div key={route.id}>
+                          <div>
                             <Link
                               to={route.path}
                               onClick={() => setOpen(false)}
@@ -127,7 +127,7 @@ const NavBar: React.FC = () => {
                               </Link>
                             ))}
                           </div>
-                        </>
+                        </div>
                       );
                     }
 

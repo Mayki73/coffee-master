@@ -237,6 +237,7 @@ const IndexPage: React.FC<PageProps> = () => {
           content="ремонт кофемашин Минск, ремонт кофемашин цены, ремонт кофе машин, ремонт кофеварок, обслуживание кофемашин, диагностика кофейного оборудования, специалист по ремонту кофемашин"
         />
       </Helmet>
+
       <Header />
 
       <main className="font-[Comfortaa] mt-20 space-y-20 pb-20">
@@ -449,6 +450,7 @@ const IndexPage: React.FC<PageProps> = () => {
           </section>
         </ScrollAnimate>
       </main>
+
       <Footer />
     </>
   );
