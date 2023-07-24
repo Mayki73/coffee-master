@@ -220,6 +220,7 @@ const Prices: React.FC = () => {
     <>
       <Modal open={isModalOpen} setOpen={setIsModalOpen} />
       <Helmet>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
         <title>Цены на ремонт кофемашин в Минске | CoffeeRemont24</title>
         <meta
           name="description"

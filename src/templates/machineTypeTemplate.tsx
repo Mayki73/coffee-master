@@ -166,6 +166,7 @@ const MachineTypeTemplate: React.FC = ({ pageContext }: any) => {
     <>
       <Modal open={isModalOpen} setOpen={setIsModalOpen} />
       <Helmet>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
         <title>{seo.title}</title>
         <meta name="description" content={seo.description} />
         <meta name="keywords" content={seo.keywords} />

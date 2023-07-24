@@ -43,6 +43,7 @@ const Contacts: React.FC = () => {
         className="bg-white"
       >
         <Helmet>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
           <title>
             Контакты CoffeeRemont24 - свяжитесь с нами для ремонта кофемашин в
             Минске

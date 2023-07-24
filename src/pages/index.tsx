@@ -227,6 +227,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <Modal open={isModalOpen} setOpen={setIsModalOpen} />
       <StartModal isOpen={isOpenStartModal} setIsOpen={changeStartModalState} />
       <Helmet>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
         <title>Ремонт кофемашин в Минске | CoffeeRemont24</title>
         <meta
           name="description"
