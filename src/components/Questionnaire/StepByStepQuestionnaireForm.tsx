@@ -68,12 +68,12 @@ const StepByStepForm: React.FC<IProps> = ({ setIsOpenModal }) => {
     <div>
       {step < formData.length ? (
         <div>
-          <h2 className="text-2xl font-bold max-w-[35rem] w-fit">
+          <h2 className="text-2xl font-bold">
             {formData[step].question}
           </h2>
           <div
-            className={clsx("mt-8 max-w-[35rem] w-full space-y-2", {
-              "grid grid-cols-1 md:grid-cols-2 gap-3 space-y-0":
+            className={clsx("grid grid-cols-1 mt-8 max-w-[35rem] w-full gap-3", {
+              "grid grid-cols-1 md:grid-cols-2 gap-3":
                 formData[step].options.length > 3,
             })}
           >

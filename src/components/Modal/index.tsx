@@ -4,6 +4,7 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import { QueryClientProvider } from "@tanstack/react-query";
 import queryClient from "../../constants/query-client";
 import Questionnaire from "../Questionnaire";
+import { BanknotesIcon, ClockIcon, GiftIcon } from "@heroicons/react/20/solid";
 
 interface IProps {
   open: boolean;
@@ -42,7 +43,7 @@ const Modal: React.FC<IProps> = ({ open, setOpen }) => {
                 leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                 leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
               >
-                <Dialog.Panel className="font-[Comfortaa] text-base md:text-lg font-light text-gray-600 relative transform overflow-hidden bg-white px-4 pb-2 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-xl sm:p-6">
+                <Dialog.Panel className="font-[Comfortaa] text-base md:text-lg font-light text-gray-600 relative transform overflow-hidden bg-white px-4 pb-2 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-7xl sm:p-6">
                   <div className="absolute right-0 top-0 pr-4 pt-4 block">
                     <button
                       type="button"
@@ -53,7 +54,31 @@ const Modal: React.FC<IProps> = ({ open, setOpen }) => {
                       <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                     </button>
                   </div>
-                  <Questionnaire setIsOpenModal={() => setOpen(false)} />
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-x-5">
+                    <Questionnaire setIsOpenModal={() => setOpen(false)} />
+                    <div className="space-y-7 mt-5 px-0 md:px-5">
+                      <h2 className="text-2xl font-bold text-black">
+                        По окончанию теста вы получите:
+                      </h2>
+
+                      <div className="space-y-5">
+                        <div className="border-2 border-black p-5 flex space-x-3 items-center">
+                          <BanknotesIcon className="w-10 h-10" />
+                          <p>Расчет стоимости ремонта</p>
+                        </div>
+
+                        <div className="border-2 border-black p-5 flex space-x-3 items-center">
+                          <ClockIcon className="w-10 h-10" />
+                          <p>Расчет сроков ремонта</p>
+                        </div>
+
+                        <div className="border-2 border-black p-5 flex space-x-3 items-center">
+                          <GiftIcon className="w-10 h-10" />
+                          <p>+ упаковка свежеобжаренного кофе</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </Dialog.Panel>
               </Transition.Child>
             </div>
