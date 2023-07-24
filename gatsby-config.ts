@@ -3,9 +3,10 @@ import type { GatsbyConfig } from "gatsby";
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `coffeeremont24`,
-    description: 'Ремонт кофемашин и кофеварок в Минске',
+    description: "Ремонт кофемашин и кофеварок в Минске",
     siteUrl: `https://www.coffeeremont24.by`,
-    image: 'src/images/brands/icon-coffeeremont.png',
+    image: "src/images/brands/icon-coffeeremont.png",
+    lang: "ru",
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
