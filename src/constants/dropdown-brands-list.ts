@@ -113,7 +113,7 @@ export const dropdownList = [
       {
         name: "Philips",
         image: Philips,
-        link: "repair/household/melitta",
+        link: "repair/household/philips",
       },
       {
         name: "Franke",

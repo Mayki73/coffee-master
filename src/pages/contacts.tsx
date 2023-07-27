@@ -43,7 +43,10 @@ const Contacts: React.FC = () => {
         className="bg-white"
       >
         <Helmet>
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
+          <meta
+            name="robots"
+            content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+          />
           <title>
             Контакты CoffeeRemont24 - свяжитесь с нами для ремонта кофемашин в
             Минске
@@ -70,11 +73,18 @@ const Contacts: React.FC = () => {
               <ul className="space-y-5">
                 {contacts.map((item) => (
                   <ScrollAnimate>
-                    <li className="flex flex-col md:flex-row space-y-6 md:space-x-10" key={item.title}>
+                    <li
+                      className="flex flex-col md:flex-row space-y-6 md:space-x-10"
+                      key={item.title}
+                    >
                       <div className="w-full md:w-max flex justify-center md:justify-end items-end">
-                      {item.icon}
+                        {item.icon}
                       </div>
-                      <a href={item.link} target="_blank" className="text-lg text-center md:text-start">
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        className="text-lg text-center md:text-start"
+                      >
                         {item.value}
                       </a>
                     </li>
