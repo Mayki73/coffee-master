@@ -20,6 +20,14 @@ const config: GatsbyConfig = {
         includeInDevelopment: false,
       },
     },
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "GTM-WRB5QK9S", // Replace with your second GTM container ID
+        includeInDevelopment: false, // Set to true if you want to include in development mode
+        defaultDataLayer: { platform: "gatsby" }, // Optional
+      },
+    },
     "gatsby-plugin-postcss",
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
