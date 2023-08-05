@@ -14,31 +14,11 @@ const config: GatsbyConfig = {
   graphqlTypegen: true,
   plugins: [
     {
-      resolve: "gatsby-plugin-google-gtag",
+      resolve: "gatsby-plugin-google-tagmanager",
       options: {
-        trackingIds: ["GTM-NB3DKQBK"], // Replace GTM-XXXXXXX with your first GTM container ID
-        gtagConfig: {
-          // Additional gtag.js configuration for the first GTM (optional)
-          anonymize_ip: true, // Anonymize IP addresses
-        },
-        pluginConfig: {
-          // Additional plugin configuration for the first GTM (optional)
-          head: true, // Place GTM script in the head (recommended)
-        },
-      },
-    },
-    {
-      resolve: "gatsby-plugin-google-gtag",
-      options: {
-        trackingIds: ["GTM-WRB5QK9S"], // Replace GTM-YYYYYYY with your second GTM container ID
-        gtagConfig: {
-          // Additional gtag.js configuration for the second GTM (optional)
-          anonymize_ip: true, // Anonymize IP addresses
-        },
-        pluginConfig: {
-          // Additional plugin configuration for the second GTM (optional)
-          head: true, // Place GTM script in the head (recommended)
-        },
+        id: "GTM-WRB5QK9S",
+        includeInDevelopment: false,
+        defaultDataLayer: { platform: "gatsby" },
       },
     },
     "gatsby-plugin-postcss",
