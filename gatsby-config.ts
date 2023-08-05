@@ -5,8 +5,8 @@ const config: GatsbyConfig = {
     title: `coffeeremont24`,
     description: "Ремонт кофемашин и кофеварок в Минске",
     siteUrl: `https://www.coffeeremont24.by`,
-    image: "src/images/brands/icon-coffeeremont.png",
-    lang: "ru",
+    image: "static/icon.png",
+    lang: "ru-RU",
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -29,7 +29,13 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/brands/icon-coffeeremont.png", // or the path to your favicon file
+        name: "CoffeeRemont24",
+        short_name: "coffeeremont24",
+        start_url: "/",
+        background_color: "#ffffff",
+        theme_color: "#663399",
+        display: "minimal-ui",
+        icon: "static/icon.png", // Path to your favicon
       },
     },
     {
