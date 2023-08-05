@@ -21,6 +21,14 @@ const config: GatsbyConfig = {
         defaultDataLayer: { platform: "gatsby" },
       },
     },
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "GTM-NB3DKQBK",
+        includeInDevelopment: false,
+        defaultDataLayer: { platform: "gatsby" },
+      },
+    },
     "gatsby-plugin-postcss",
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
