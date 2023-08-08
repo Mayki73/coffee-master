@@ -9,17 +9,44 @@ const About: React.FC = () => {
   return (
     <>
       <Helmet>
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
+        <meta
+          name="robots"
+          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        />
         <title>
-          Доставка и оплата - Ремонту кофемашин в Минске | CoffeeRemont24
+          Доставка и оплата - Ремонт кофемашин в Минске | CoffeeRemont24
         </title>
         <meta
           name="description"
           content="Условия оплаты и доставки ремонта кофемашины на сайте CoffeeRemont24. Узнайте подробности о способах оплаты и условиях доставки после ремонта кофемашины. Мы предлагаем удобные варианты оплаты и оперативную доставку в Минске."
         />
+        <link
+          rel="canonical"
+          href="https://coffeeremont24.by/delivery-and-payment/"
+        />
+        <meta property="og:locale" content="ru_RU" />
+        <meta property="og:type" content="article" />
         <meta
-          name="keywords"
-          content="условия оплаты ремонта кофемашины, условия доставки ремонта кофемашины, способы оплаты ремонта кофемашины, условия оплаты и доставки, CoffeeRemont24"
+          property="og:title"
+          content="Доставка и оплата - Ремонт кофемашин в Минске | CoffeeRemont24"
+        />
+        <meta
+          property="og:description"
+          content="Условия оплаты и доставки ремонта кофемашины на сайте CoffeeRemont24. Узнайте подробности о способах оплаты и условиях доставки после ремонта кофемашины. Мы предлагаем удобные варианты оплаты и оперативную доставку в Минске."
+        />
+        <meta
+          property="og:url"
+          content="https://coffeeremont24.by/delivery-and-payment/"
+        />
+        <meta property="og:site_name" content="coffeeremont24" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:description"
+          content="Условия оплаты и доставки ремонта кофемашины на сайте CoffeeRemont24. Узнайте подробности о способах оплаты и условиях доставки после ремонта кофемашины. Мы предлагаем удобные варианты оплаты и оперативную доставку в Минске."
+        />
+        <meta
+          name="twitter:title"
+          content="Доставка и оплата - Ремонт кофемашин в Минске | CoffeeRemont24"
         />
       </Helmet>
       <Header />

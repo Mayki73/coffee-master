@@ -43,7 +43,10 @@ const About: React.FC = () => {
   return (
     <>
       <Helmet>
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
+        <meta
+          name="robots"
+          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        />
         <title>
           О нас - Специалисты по ремонту кофемашин в Минске | CoffeeRemont24
         </title>
@@ -51,9 +54,30 @@ const About: React.FC = () => {
           name="description"
           content="Познакомьтесь с нашей командой опытных специалистов по ремонту кофемашин в Минске. Мы предлагаем профессиональные услуги по ремонту кофеоборудования, включая этапы от подачи заявки до окончательного ремонта. Узнайте больше о нашем опыте и качестве обслуживания."
         />
+        <link rel="canonical" href="https://www.coffeeremont24.by/about/" />
+        <meta property="og:type" content="article" />
+        <meta property="og:locale" content="ru_RU" />
         <meta
-          name="keywords"
-          content="ремонт кофемашин Минск, специалисты по ремонту кофемашин, опытные мастера, этапы ремонта кофейного оборудования, обслуживание кофемашин, ремонт кофеоборудования, ремонт кофе машин"
+          property="og:title"
+          content="О нас - Специалисты по ремонту кофемашин в Минске | CoffeeRemont24"
+        />
+        <meta
+          property="og:description"
+          content="Познакомьтесь с нашей командой опытных специалистов по ремонту кофемашин в Минске. Мы предлагаем профессиональные услуги по ремонту кофеоборудования, включая этапы от подачи заявки до окончательного ремонта. Узнайте больше о нашем опыте и качестве обслуживания."
+        />
+        <meta
+          property="og:url"
+          content="https://www.coffeeremont24.by/about/"
+        />
+        <meta property="og:site_name" content="coffeeremont24" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:description"
+          content="Познакомьтесь с нашей командой опытных специалистов по ремонту кофемашин в Минске. Мы предлагаем профессиональные услуги по ремонту кофеоборудования, включая этапы от подачи заявки до окончательного ремонта. Узнайте больше о нашем опыте и качестве обслуживания."
+        />
+        <meta
+          name="twitter:title"
+          content="О нас - Специалисты по ремонту кофемашин в Минске | CoffeeRemont24"
         />
       </Helmet>
       <Header />

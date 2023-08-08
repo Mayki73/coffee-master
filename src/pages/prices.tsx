@@ -220,16 +220,39 @@ const Prices: React.FC = () => {
     <>
       <Modal open={isModalOpen} setOpen={setIsModalOpen} />
       <Helmet>
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
-        <title>Цены на ремонт кофемашин в Минске | CoffeeRemont24</title>
+        <meta
+          name="robots"
+          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        />
+        <title>
+          Цены на ремонт и обслуживание кофемашин в Минске - coffeeremont24
+        </title>
         <meta
           name="description"
-          content="Ознакомьтесь с нашими ценами на ремонт кофемашин в Минске. Мы предлагаем профессиональные услуги по диагностике, ремонту и обслуживанию кофейного оборудования по доступным ценам. Узнайте стоимость ремонта вашей кофемашины с помощью нашего прайс-листа."
+          content="Стоимость услуг по ремонту и обслуживанию кофемашин в Минске. Диагностика и выезд - бесплатно! Прайс-лист на сервисные работы и устранение неисправностей"
+        />
+        <link rel="canonical" href="https://coffeeremont24.by/prices/" />
+        <meta property="og:locale" content="ru_RU" />
+        <meta property="og:type" content="article" />
+        <meta
+          property="og:title"
+          content="Цены на ремонт и обслуживание кофемашин в Минске - coffeeremont24"
         />
         <meta
-          name="keywords"
-          content="цены на ремонт кофемашин Минск, прайс-лист на ремонт кофемашин, стоимость ремонта кофеварок, диагностика кофейного оборудования, обслуживание кофемашин, ремонт кофе машин"
+          property="og:description"
+          content="Стоимость услуг по ремонту и обслуживанию кофемашин в Минске. Диагностика и выезд - бесплатно! Прайс-лист на сервисные работы и устранение неисправностей"
         />
+        <meta property="og:url" content="https://coffeeremont24.by/prices/" />
+        <meta property="og:site_name" content="coffeeremont24" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:description"
+          content="Стоимость услуг по ремонту и обслуживанию кофемашин в Минске. Диагностика и выезд - бесплатно! Прайс-лист на сервисные работы и устранение неисправностей"
+        />
+        <meta
+          name="twitter:title"
+          content="Цены на ремонт и обслуживание кофемашин в Минске - coffeeremont24"
+        ></meta>
       </Helmet>
       <Header />
       <main className="max-w-screen-2xl mx-5 md:mx-auto my-20 font-[Comfortaa] text-base md:text-lg leading-8 tracking-wider text-gray-600 font-light space-y-10">

@@ -231,14 +231,35 @@ const IndexPage: React.FC<PageProps> = () => {
           name="robots"
           content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
         />
-        <title>Ремонт кофемашин в Минске | CoffeeRemont24</title>
+        <title>
+          Ремонт кофемашин в Минске на дому и в офисе - сервисный центр
+          Сoffeeremont
+        </title>
         <meta
           name="description"
-          content="Комплексный ремонт кофемашин в Минске. Профессиональные услуги по диагностике, ремонту и обслуживанию кофейного оборудования. Цены, диагностика."
+          content="Ремонт кофемашин в Минске и области с выездом на дом. Бесплатная диагностика, гарантия, низкие цены, опытные мастера, срочный ремонт - сервисный центр coffeeremont24"
+        />
+        <link rel="canonical" href="https://www.coffeeremont24.by/" />
+        <meta property="og:locale" content="ru_RU" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Ремонт кофемашин в Минске на дому и в офисе - сервисный центр СoffeeRemont"
         />
         <meta
-          name="keywords"
-          content="ремонт кофемашин Минск, ремонт кофемашин цены, ремонт кофе машин, ремонт кофеварок, обслуживание кофемашин, диагностика кофейного оборудования, специалист по ремонту кофемашин"
+          property="og:description"
+          content="Ремонт кофемашин в Минске и области с выездом на дом. Бесплатная диагностика, гарантия, низкие цены, опытные мастера, срочный ремонт - сервисный центр coffeeremont24"
+        />
+        <meta property="og:url" content="https://www.coffeeremont24.by/" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="og:site_name" content="CoffeeRemont24" />
+        <meta
+          name="twitter:description"
+          content="Ремонт кофемашин в Минске и области с выездом на дом. Бесплатная диагностика, гарантия, низкие цены, опытные мастера, срочный ремонт - сервисный центр coffeeremont24"
+        />
+        <meta
+          name="twitter:title"
+          content="Ремонт кофемашин в Минске на дому и в офисе - сервисный центр Сoffeeremont"
         />
       </Helmet>
 

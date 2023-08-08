@@ -97,15 +97,39 @@ const Mulfunctions: React.FC = () => {
     <>
       <Modal open={isModalOpen} setOpen={setIsModalOpen} />
       <Helmet>
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
-        <title>Распространенные неисправности кофемашин | CoffeeRemont24</title>
+        <meta
+          name="robots"
+          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        />
+        <title>Неисправности кофемашин и кофеварок - coffeeremont24</title>
         <meta
           name="description"
           content="Узнайте о распространенных неисправностях кофемашин и как мы можем помочь в их ремонте. CoffeeRemont24 предлагает профессиональные услуги по диагностике и исправлению проблем с кофеоборудованием. Быстро и надежно устраняем все типы неисправностей."
         />
+        <link rel="canonical" href="https://coffeeremont24.by/mulfunctions/" />
+        <meta property="og:locale" content="ru_RU" />
+        <meta property="og:type" content="article" />
         <meta
-          name="keywords"
-          content="неисправности кофемашин, ремонт кофемашин Минск, диагностика кофейного оборудования, исправление проблем с кофеваркой, ремонт кофе машин, специалисты по ремонту кофемашин"
+          property="og:title"
+          content="Неисправности кофемашин и кофеварок - coffeeremont24"
+        />
+        <meta
+          property="og:description"
+          content="Узнайте о распространенных неисправностях кофемашин и как мы можем помочь в их ремонте. CoffeeRemont24 предлагает профессиональные услуги по диагностике и исправлению проблем с кофеоборудованием. Быстро и надежно устраняем все типы неисправностей."
+        />
+        <meta
+          property="og:url"
+          content="https://coffeeremont24.by/mulfunctions/"
+        />
+        <meta property="og:site_name" content="coffeeremont24" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:description"
+          content="Узнайте о распространенных неисправностях кофемашин и как мы можем помочь в их ремонте. CoffeeRemont24 предлагает профессиональные услуги по диагностике и исправлению проблем с кофеоборудованием. Быстро и надежно устраняем все типы неисправностей."
+        />
+        <meta
+          name="twitter:title"
+          content="Неисправности кофемашин и кофеварок - coffeeremont24"
         />
       </Helmet>
       <Header />

@@ -47,18 +47,30 @@ const Contacts: React.FC = () => {
             name="robots"
             content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
           />
-          <title>
-            Контакты CoffeeRemont24 - свяжитесь с нами для ремонта кофемашин в
-            Минске
-          </title>
+          <title>Контакты - coffeeremont24</title>
           <meta
             name="description"
             content="Наши контактные данные для связи с нами по вопросам ремонта кофемашин. Свяжитесь с нами для получения дополнительной информации, оставьте заявку на ремонт или задайте вопросы нашей команде. Мы готовы помочь вам с вашими кофейными потребностями."
           />
+          <link rel="canonical" href="https://coffeeremont24.by/contacts/" />
+          <meta property="og:locale" content="ru_RU" />
+          <meta property="og:type" content="article" />
+          <meta property="og:title" content="Контакты - coffeeremont24" />
           <meta
-            name="keywords"
-            content="контакты CoffeeRemont24, ремонт кофемашин в Минске, связаться с CoffeeRemont24, заявка на ремонт кофемашины, обслуживание кофемашин, CoffeeRemont24"
+            property="og:description"
+            content="Наши контактные данные для связи с нами по вопросам ремонта кофемашин. Свяжитесь с нами для получения дополнительной информации, оставьте заявку на ремонт или задайте вопросы нашей команде. Мы готовы помочь вам с вашими кофейными потребностями."
           />
+          <meta
+            property="og:url"
+            content="https://coffeeremont24.by/contacts/"
+          />
+          <meta property="og:site_name" content="coffeeremont24" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta
+            name="twitter:description"
+            content="Наши контактные данные для связи с нами по вопросам ремонта кофемашин. Свяжитесь с нами для получения дополнительной информации, оставьте заявку на ремонт или задайте вопросы нашей команде. Мы готовы помочь вам с вашими кофейными потребностями."
+          />
+          <meta name="twitter:title" content="Контакты - coffeeremont24" />
         </Helmet>
         <QueryClientProvider client={queryClient}>
           <Header />

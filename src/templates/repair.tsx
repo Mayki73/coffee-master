@@ -58,18 +58,36 @@ const Repair: React.FC = ({ pageContext }: any) => {
     <>
       <Modal open={isModalOpen} setOpen={setIsModalOpen} />
       <Helmet>
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
-        <title>
-          Ремонт кофемашин: Бытовые, Встраиваемые, Профессиональные, Вендинговые
-          | CoffeeRemont24
-        </title>
+        <meta
+          name="robots"
+          content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        />
+        <title>Ремонт кофемашин и кофеварок в Минске - coffeeremont24</title>
         <meta
           name="description"
           content="CoffeeRemont24 предлагает профессиональные услуги по ремонту кофемашин разных категорий. Выберите нужную категорию: Бытовые кофемашины, Встраиваемые, Профессиональные или Вендинговые, и ознакомьтесь со списком брендов, которые мы обслуживаем."
         />
+        <link rel="canonical" href="https://coffeeremont24.by/repair/" />
+        <meta property="og:locale" content="ru_RU" />
+        <meta property="og:type" content="article" />
         <meta
-          name="keywords"
-          content="ремонт кофемашин, ремонт бытовых кофемашин, ремонт бытовых кофемашин Минск, ремонт встраиваемых кофемашин, ремонт встраиваемых кофемашин Минск, ремонт профессиональных кофемашин, ремонт профессиональных кофемашин Минск, ремонт вендинговых кофемашин, ремонт вендинговых кофемашин Минск, список брендов кофемашин"
+          property="og:title"
+          content="Ремонт кофемашин и кофеварок в Минске - coffeeremont24"
+        />
+        <meta
+          property="og:description"
+          content="CoffeeRemont24 предлагает профессиональные услуги по ремонту кофемашин разных категорий. Выберите нужную категорию: Бытовые кофемашины, Встраиваемые, Профессиональные или Вендинговые, и ознакомьтесь со списком брендов, которые мы обслуживаем"
+        />
+        <meta property="og:url" content="https://coffeeremont24.by/repair/" />
+        <meta property="og:site_name" content="coffeeremont24" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:description"
+          content="CoffeeRemont24 предлагает профессиональные услуги по ремонту кофемашин разных категорий. Выберите нужную категорию: Бытовые кофемашины, Встраиваемые, Профессиональные или Вендинговые, и ознакомьтесь со списком брендов, которые мы обслуживаем"
+        />
+        <meta
+          name="twitter:title"
+          content="Ремонт кофемашин и кофеварок в Минске - coffeeremont24"
         />
       </Helmet>
       <Header />
