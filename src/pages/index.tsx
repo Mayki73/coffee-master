@@ -222,6 +222,16 @@ const IndexPage: React.FC<PageProps> = () => {
     setIsModalOpen(true);
   };
 
+  const logoUrl = "static/icon.png"; // Replace with your logo URL
+
+  const structuredData = {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    name: "CoffeeRemont24",
+    url: "https://www.coffeeremont24.by/",
+    logo: logoUrl,
+  };
+
   return (
     <>
       <Modal open={isModalOpen} setOpen={setIsModalOpen} />
@@ -261,6 +271,9 @@ const IndexPage: React.FC<PageProps> = () => {
           name="twitter:title"
           content="Ремонт кофемашин в Минске на дому и в офисе - сервисный центр Сoffeeremont"
         />
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
       </Helmet>
 
       <Header />

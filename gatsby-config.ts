@@ -19,6 +19,18 @@ const config: GatsbyConfig = {
     "gatsby-plugin-sharp",
     "gatsby-plugin-react-helmet",
     {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        name: "CoffeeRemont24",
+        short_name: "CoffeeRemont24",
+        start_url: "/",
+        background_color: "#ffffff",
+        theme_color: "#663399",
+        display: "minimal-ui",
+        icon: "static/icon.png", // Replace with your logo image path
+      },
+    },
+    {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
         id: "GTM-NB3DKQBK",
@@ -32,18 +44,6 @@ const config: GatsbyConfig = {
         id: "GTM-WRB5QK9S",
         includeInDevelopment: false,
         defaultDataLayer: { platform: "gatsby" },
-      },
-    },
-    {
-      resolve: "gatsby-plugin-manifest",
-      options: {
-        name: "CoffeeRemont24",
-        short_name: "coffeeremont24",
-        start_url: "/",
-        background_color: "#ffffff",
-        theme_color: "#663399",
-        display: "minimal-ui",
-        icon: "static/icon.png", // Path to your favicon
       },
     },
     {

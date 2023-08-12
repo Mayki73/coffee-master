@@ -89,6 +89,16 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
     setIsModalOpen(true);
   };
 
+  const logoUrl = "static/icon.png"; // Replace with your logo URL
+
+  const structuredData = {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    name: "CoffeeRemont24",
+    url: seo.link,
+    logo: logoUrl,
+  };
+
   return (
     <>
       <Modal open={isModalOpen} setOpen={setIsModalOpen} />
@@ -99,7 +109,19 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
         />
         <title>{seo.title}</title>
         <meta name="description" content={seo.description} />
-        <meta name="keywords" content={seo.keywords} />
+        <link rel="canonical" href={seo.link} />
+        <meta property="og:locale" content="ru_RU" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={seo.title} />
+        <meta property="og:description" content={seo.description} />
+        <meta property="og:url" content={seo.link} />
+        <meta property="og:site_name" content="coffeeremont24" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:description" content={seo.description} />
+        <meta name="twitter:title" content={seo.title} />
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
       </Helmet>
       <Header />
       <main className="max-w-screen-2xl mx-5 md:mx-auto my-20 font-[Comfortaa] text-base md:text-lg leading-8 tracking-wider text-gray-600 font-light space-y-10">

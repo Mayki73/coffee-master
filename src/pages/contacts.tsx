@@ -31,6 +31,16 @@ const contacts = [
 ];
 
 const Contacts: React.FC = () => {
+  const logoUrl = "static/icon.png"; // Replace with your logo URL
+
+  const structuredData = {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    name: "CoffeeRemont24",
+    url: "https://www.coffeeremont24.by/contacts/",
+    logo: logoUrl,
+  };
+
   return (
     <>
       <SnackbarProvider
@@ -71,6 +81,9 @@ const Contacts: React.FC = () => {
             content="Наши контактные данные для связи с нами по вопросам ремонта кофемашин. Свяжитесь с нами для получения дополнительной информации, оставьте заявку на ремонт или задайте вопросы нашей команде. Мы готовы помочь вам с вашими кофейными потребностями."
           />
           <meta name="twitter:title" content="Контакты - coffeeremont24" />
+          <script type="application/ld+json">
+            {JSON.stringify(structuredData)}
+          </script>
         </Helmet>
         <QueryClientProvider client={queryClient}>
           <Header />

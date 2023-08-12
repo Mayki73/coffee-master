@@ -54,6 +54,16 @@ const Repair: React.FC = ({ pageContext }: any) => {
     setIsModalOpen(true);
   };
 
+  const logoUrl = "static/icon.png"; // Replace with your logo URL
+
+  const structuredData = {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    name: "CoffeeRemont24",
+    url: "https://coffeeremont24.by/repair/",
+    logo: logoUrl,
+  };
+
   return (
     <>
       <Modal open={isModalOpen} setOpen={setIsModalOpen} />
@@ -89,6 +99,9 @@ const Repair: React.FC = ({ pageContext }: any) => {
           name="twitter:title"
           content="Ремонт кофемашин и кофеварок в Минске - coffeeremont24"
         />
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
       </Helmet>
       <Header />
       <main className="max-w-screen-2xl mx-5 md:mx-auto my-20 font-[Comfortaa] text-base md:text-lg leading-8 tracking-wider text-gray-600 font-light">

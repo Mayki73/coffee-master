@@ -93,6 +93,16 @@ const Mulfunctions: React.FC = () => {
     setIsModalOpen(true);
   };
 
+  const logoUrl = "static/icon.png"; // Replace with your logo URL
+
+  const structuredData = {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    name: "CoffeeRemont24",
+    url: "https://www.coffeeremont24.by/mulfunctions/",
+    logo: logoUrl,
+  };
+
   return (
     <>
       <Modal open={isModalOpen} setOpen={setIsModalOpen} />
@@ -131,6 +141,9 @@ const Mulfunctions: React.FC = () => {
           name="twitter:title"
           content="Неисправности кофемашин и кофеварок - coffeeremont24"
         />
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
       </Helmet>
       <Header />
       <main className="max-w-screen-2xl mx-5 md:mx-auto my-20 font-[Comfortaa] text-base md:text-lg leading-8 tracking-wider text-gray-600 font-light space-y-10">

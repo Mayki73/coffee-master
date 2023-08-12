@@ -5,7 +5,17 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ScrollAnimate from "../components/ScrollAnimate";
 
-const About: React.FC = () => {
+const DeliveryAndPayment: React.FC = () => {
+  const logoUrl = "static/icon.png"; // Replace with your logo URL
+
+  const structuredData = {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    name: "CoffeeRemont24",
+    url: "https://www.coffeeremont24.by/delivery-and-payment/",
+    logo: logoUrl,
+  };
+
   return (
     <>
       <Helmet>
@@ -48,6 +58,9 @@ const About: React.FC = () => {
           name="twitter:title"
           content="Доставка и оплата - Ремонт кофемашин в Минске | CoffeeRemont24"
         />
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
       </Helmet>
       <Header />
       <main className="max-w-screen-2xl mx-5 md:mx-auto my-20 font-[Comfortaa] text-base md:text-lg leading-8 tracking-wider text-gray-600 font-light">
@@ -184,4 +197,4 @@ const About: React.FC = () => {
   );
 };
 
-export default About;
+export default DeliveryAndPayment;
