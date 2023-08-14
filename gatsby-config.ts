@@ -27,7 +27,7 @@ const config: GatsbyConfig = {
         background_color: "#ffffff",
         theme_color: "#663399",
         display: "minimal-ui",
-        icon: "static/icon.png", // Replace with your logo image path
+        icon: "icon.png", // Replace with your logo image path
       },
     },
     {
@@ -50,6 +50,14 @@ const config: GatsbyConfig = {
       resolve: "gatsby-plugin-sitemap",
       options: {
         output: "/sitemap.xml", // Output path for the sitemap
+      },
+    },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://www.koferem.by",
+        sitemap: "https://www.koferem.by/sitemap0.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
       },
     },
     "gatsby-transformer-sharp",
