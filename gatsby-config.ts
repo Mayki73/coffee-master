@@ -55,8 +55,8 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "https://www.koferem.by",
-        sitemap: "https://www.koferem.by/sitemap0.xml",
+        host: "https://www.coffeeremont24.by",
+        sitemap: "https://www.coffeeremont24.by/sitemap0.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
