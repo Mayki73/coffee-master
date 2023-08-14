@@ -27,7 +27,7 @@ const config: GatsbyConfig = {
         background_color: "#ffffff",
         theme_color: "#663399",
         display: "minimal-ui",
-        icon: "icon.png", // Replace with your logo image path
+        icon: "static/icon.png", // Replace with your logo image path
       },
     },
     {
