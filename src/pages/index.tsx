@@ -222,7 +222,7 @@ const IndexPage: React.FC<PageProps> = () => {
     setIsModalOpen(true);
   };
 
-  const logoUrl = "static/icon.png"; // Replace with your logo URL
+  const logoUrl = "favicon.ico"; // Replace with your logo URL
 
   const structuredData = {
     "@context": "http://schema.org",
@@ -260,6 +260,7 @@ const IndexPage: React.FC<PageProps> = () => {
           property="og:description"
           content="Ремонт кофемашин в Минске и области с выездом на дом. Бесплатная диагностика, гарантия, низкие цены, опытные мастера, срочный ремонт - сервисный центр coffeeremont24"
         />
+        <link rel="icon" href={logoUrl} />
         <meta property="og:url" content="https://www.coffeeremont24.by/" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="og:site_name" content="CoffeeRemont24" />

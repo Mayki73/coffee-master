@@ -31,7 +31,7 @@ const contacts = [
 ];
 
 const Contacts: React.FC = () => {
-  const logoUrl = "static/icon.png"; // Replace with your logo URL
+  const logoUrl = "favicon.ico"; // Replace with your logo URL
 
   const structuredData = {
     "@context": "http://schema.org",
@@ -76,6 +76,7 @@ const Contacts: React.FC = () => {
           />
           <meta property="og:site_name" content="coffeeremont24" />
           <meta name="twitter:card" content="summary_large_image" />
+          <link rel="icon" href={logoUrl} />
           <meta
             name="twitter:description"
             content="Наши контактные данные для связи с нами по вопросам ремонта кофемашин. Свяжитесь с нами для получения дополнительной информации, оставьте заявку на ремонт или задайте вопросы нашей команде. Мы готовы помочь вам с вашими кофейными потребностями."

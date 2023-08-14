@@ -82,14 +82,11 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
     return <img src={image} alt={`Image: ${image}`} />;
   };
 
-  console.log("logo", logo);
-  console.log("image", image);
-
   const openModalHandler = () => {
     setIsModalOpen(true);
   };
 
-  const logoUrl = "static/icon.png"; // Replace with your logo URL
+  const logoUrl = "favicon.ico"; // Replace with your logo URL
 
   const structuredData = {
     "@context": "http://schema.org",
@@ -119,6 +116,7 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:description" content={seo.description} />
         <meta name="twitter:title" content={seo.title} />
+        <link rel="icon" href={logoUrl} />
         <script type="application/ld+json">
           {JSON.stringify(structuredData)}
         </script>

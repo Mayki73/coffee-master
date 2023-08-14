@@ -54,7 +54,7 @@ const Repair: React.FC = ({ pageContext }: any) => {
     setIsModalOpen(true);
   };
 
-  const logoUrl = "static/icon.png"; // Replace with your logo URL
+  const logoUrl = "favicon.ico"; // Replace with your logo URL
 
   const structuredData = {
     "@context": "http://schema.org",
@@ -84,6 +84,7 @@ const Repair: React.FC = ({ pageContext }: any) => {
           property="og:title"
           content="Ремонт кофемашин и кофеварок в Минске - coffeeremont24"
         />
+        <link rel="icon" href={logoUrl} />
         <meta
           property="og:description"
           content="CoffeeRemont24 предлагает профессиональные услуги по ремонту кофемашин разных категорий. Выберите нужную категорию: Бытовые кофемашины, Встраиваемые, Профессиональные или Вендинговые, и ознакомьтесь со списком брендов, которые мы обслуживаем"

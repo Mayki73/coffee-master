@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 import ScrollAnimate from "../components/ScrollAnimate";
 
 const DeliveryAndPayment: React.FC = () => {
-  const logoUrl = "static/icon.png"; // Replace with your logo URL
+  const logoUrl = "favicon.ico"; // Replace with your logo URL
 
   const structuredData = {
     "@context": "http://schema.org",
@@ -36,6 +36,7 @@ const DeliveryAndPayment: React.FC = () => {
         />
         <meta property="og:locale" content="ru_RU" />
         <meta property="og:type" content="article" />
+        <link rel="icon" href={logoUrl} />
         <meta
           property="og:title"
           content="Доставка и оплата - Ремонт кофемашин в Минске | CoffeeRemont24"

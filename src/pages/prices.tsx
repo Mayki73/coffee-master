@@ -216,7 +216,7 @@ const Prices: React.FC = () => {
     setIsModalOpen(true);
   };
 
-  const logoUrl = "static/icon.png"; // Replace with your logo URL
+  const logoUrl = "favicon.ico"; // Replace with your logo URL
 
   const structuredData = {
     "@context": "http://schema.org",
@@ -248,6 +248,7 @@ const Prices: React.FC = () => {
           property="og:title"
           content="Цены на ремонт и обслуживание кофемашин в Минске - coffeeremont24"
         />
+        <link rel="icon" href={logoUrl} />
         <meta
           property="og:description"
           content="Стоимость услуг по ремонту и обслуживанию кофемашин в Минске. Диагностика и выезд - бесплатно! Прайс-лист на сервисные работы и устранение неисправностей"

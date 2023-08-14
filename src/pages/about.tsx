@@ -40,7 +40,7 @@ const workSteps = [
 ];
 
 const About: React.FC = () => {
-  const logoUrl = "static/icon.png"; // Replace with your logo URL
+  const logoUrl = "favicon.ico"; // Replace with your logo URL
 
   const structuredData = {
     "@context": "http://schema.org",
@@ -79,6 +79,7 @@ const About: React.FC = () => {
           property="og:url"
           content="https://www.coffeeremont24.by/about/"
         />
+        <link rel="icon" href={logoUrl} />
         <meta property="og:site_name" content="coffeeremont24" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta

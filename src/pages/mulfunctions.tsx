@@ -93,7 +93,7 @@ const Mulfunctions: React.FC = () => {
     setIsModalOpen(true);
   };
 
-  const logoUrl = "static/icon.png"; // Replace with your logo URL
+  const logoUrl = "favicon.ico"; // Replace with your logo URL
 
   const structuredData = {
     "@context": "http://schema.org",
@@ -127,6 +127,7 @@ const Mulfunctions: React.FC = () => {
           property="og:description"
           content="Узнайте о распространенных неисправностях кофемашин и как мы можем помочь в их ремонте. CoffeeRemont24 предлагает профессиональные услуги по диагностике и исправлению проблем с кофеоборудованием. Быстро и надежно устраняем все типы неисправностей."
         />
+        <link rel="icon" href={logoUrl} />
         <meta
           property="og:url"
           content="https://coffeeremont24.by/mulfunctions/"
