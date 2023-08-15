@@ -86,7 +86,7 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
     setIsModalOpen(true);
   };
 
-  const logoUrl = "favicon.ico"; // Replace with your logo URL
+  const logoUrl = "https://coffeeremont24.by/favicon.ico"; // Replace with your logo URL
 
   const structuredData = {
     "@context": "http://schema.org",
