@@ -307,7 +307,10 @@ const Prices: React.FC = () => {
                 </thead>
                 <tbody>
                   {servicePrices.map((servicePrice) => (
-                    <tr className="bg-white border-b hover:bg-gray-50 dark:hover:bg-gray-600">
+                    <tr
+                      key={servicePrice.title}
+                      className="bg-white border-b hover:bg-gray-50 dark:hover:bg-gray-600"
+                    >
                       <th
                         scope="row"
                         className="px-6 py-4 font-medium text-gray-900 dark:text-white"
@@ -351,7 +354,10 @@ const Prices: React.FC = () => {
                   </thead>
                   <tbody>
                     {otherPrices.map((otherPrice) => (
-                      <tr className="bg-white border-b hover:bg-gray-50 dark:hover:bg-gray-600">
+                      <tr
+                        key={otherPrice.title}
+                        className="bg-white border-b hover:bg-gray-50 dark:hover:bg-gray-600"
+                      >
                         <th
                           scope="row"
                           className="px-6 py-4 font-medium text-gray-900 dark:text-white"
@@ -394,7 +400,10 @@ const Prices: React.FC = () => {
                   </thead>
                   <tbody>
                     {breakdownPrices.map((breakdownPrice) => (
-                      <tr className="bg-white border-b hover:bg-gray-50 dark:hover:bg-gray-600">
+                      <tr
+                        key={breakdownPrice.title}
+                        className="bg-white border-b hover:bg-gray-50 dark:hover:bg-gray-600"
+                      >
                         <th
                           scope="row"
                           className="px-6 py-4 font-medium text-gray-900 dark:text-white"

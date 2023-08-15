@@ -78,9 +78,9 @@ const Contacts: React.FC = () => {
           <meta name="twitter:card" content="summary_large_image" />
           <link rel="icon" href={logoUrl} />
           <meta
-          property="og:image"
-          content="https://coffeeremont24.by/favicon.ico"
-        />
+            property="og:image"
+            content="https://coffeeremont24.by/favicon.ico"
+          />
           <meta
             name="twitter:description"
             content="Наши контактные данные для связи с нами по вопросам ремонта кофемашин. Свяжитесь с нами для получения дополнительной информации, оставьте заявку на ремонт или задайте вопросы нашей команде. Мы готовы помочь вам с вашими кофейными потребностями."
@@ -100,25 +100,24 @@ const Contacts: React.FC = () => {
             </ScrollAnimate>
 
             <div className="flex justify-center items-center">
-              <ul className="space-y-5">
+              <ul className="space-y-5 list-none list-inside">
                 {contacts.map((item) => (
-                  <ScrollAnimate>
-                    <li
-                      className="flex flex-col md:flex-row space-y-6 md:space-x-10"
-                      key={item.title}
-                    >
-                      <div className="w-full md:w-max flex justify-center md:justify-end items-end">
-                        {item.icon}
+                  <li key={item.title}>
+                    <ScrollAnimate>
+                      <div className="flex flex-col md:flex-row space-y-6 md:space-x-10">
+                        <div className="w-full md:w-max flex justify-center md:justify-end items-end">
+                          {item.icon}
+                        </div>
+                        <a
+                          href={item.link}
+                          target="_blank"
+                          className="text-lg text-center md:text-start"
+                        >
+                          {item.value}
+                        </a>
                       </div>
-                      <a
-                        href={item.link}
-                        target="_blank"
-                        className="text-lg text-center md:text-start"
-                      >
-                        {item.value}
-                      </a>
-                    </li>
-                  </ScrollAnimate>
+                    </ScrollAnimate>
+                  </li>
                 ))}
               </ul>
             </div>

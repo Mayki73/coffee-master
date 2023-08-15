@@ -145,16 +145,18 @@ const Repair: React.FC = ({ pageContext }: any) => {
             </p>
           </ScrollAnimate>
 
-          <div className="gridCol">
+          <ul className="list-none list-inside gridCol">
             {households.map((brand: any) => (
-              <ScrollAnimate>
-                <Link
-                  to={`household/${brand.name}`}
-                  className="flex flex-col items-center hover:scale-105"
-                >
-                  {getImage(brand.logo)}
-                </Link>
-              </ScrollAnimate>
+              <li key={brand.name}>
+                <ScrollAnimate>
+                  <Link
+                    to={`household/${brand.name}`}
+                    className="flex flex-col items-center hover:scale-105"
+                  >
+                    {getImage(brand.logo)}
+                  </Link>
+                </ScrollAnimate>
+              </li>
             ))}
 
             <Link
@@ -164,7 +166,7 @@ const Repair: React.FC = ({ pageContext }: any) => {
               <p>Все бренды</p>
               <ChevronDoubleRightIcon className="w-10 h-10" />
             </Link>
-          </div>
+          </ul>
         </div>
 
         <div className="space-y-10 mt-20 border-b border-black pb-20">
@@ -199,16 +201,18 @@ const Repair: React.FC = ({ pageContext }: any) => {
             </p>
           </ScrollAnimate>
 
-          <div className="gridCol" style={{}}>
+          <ul className="list-none list-inside gridCol">
             {builtIns.map((brand: any) => (
-              <ScrollAnimate>
-                <Link
-                  to={`built-in/${brand.name}`}
-                  className="flex flex-col items-center hover:scale-105"
-                >
-                  {getImage(brand.logo)}
-                </Link>
-              </ScrollAnimate>
+              <li key={brand.name}>
+                <ScrollAnimate>
+                  <Link
+                    to={`built-in/${brand.name}`}
+                    className="flex flex-col items-center hover:scale-105"
+                  >
+                    {getImage(brand.logo)}
+                  </Link>
+                </ScrollAnimate>
+              </li>
             ))}
 
             <Link
@@ -218,7 +222,7 @@ const Repair: React.FC = ({ pageContext }: any) => {
               <p>Все бренды</p>
               <ChevronDoubleRightIcon className="w-10 h-10" />
             </Link>
-          </div>
+          </ul>
         </div>
 
         <div className="space-y-10 mt-20 border-b border-black pb-20">
@@ -274,16 +278,18 @@ const Repair: React.FC = ({ pageContext }: any) => {
             </ScrollAnimate>
           </div>
 
-          <div className="gridCol">
+          <ul className="list-none list-inside gridCol">
             {professionals.map((brand: any) => (
-              <ScrollAnimate>
-                <Link
-                  to={`professional/${brand.name}`}
-                  className="flex flex-col items-center hover:scale-105"
-                >
-                  {getImage(brand.logo)}
-                </Link>
-              </ScrollAnimate>
+              <li key={brand.name}>
+                <ScrollAnimate>
+                  <Link
+                    to={`professional/${brand.name}`}
+                    className="flex flex-col items-center hover:scale-105"
+                  >
+                    {getImage(brand.logo)}
+                  </Link>
+                </ScrollAnimate>
+              </li>
             ))}
 
             <Link
@@ -293,7 +299,7 @@ const Repair: React.FC = ({ pageContext }: any) => {
               <p>Все бренды</p>
               <ChevronDoubleRightIcon className="w-10 h-10" />
             </Link>
-          </div>
+          </ul>
         </div>
 
         <div className="space-y-10 mt-20 pb-20">
@@ -328,16 +334,18 @@ const Repair: React.FC = ({ pageContext }: any) => {
             </p>
           </ScrollAnimate>
 
-          <div className="gridCol">
+          <ul className="list-none list-inside gridCol">
             {vendings.map((brand: any) => (
-              <ScrollAnimate>
-                <Link
-                  to={`vending/${brand.name}`}
-                  className="flex flex-col items-center hover:scale-105"
-                >
-                  {getImage(brand.logo)}
-                </Link>
-              </ScrollAnimate>
+              <li key={brand.name}>
+                <ScrollAnimate>
+                  <Link
+                    to={`vending/${brand.name}`}
+                    className="flex flex-col items-center hover:scale-105"
+                  >
+                    {getImage(brand.logo)}
+                  </Link>
+                </ScrollAnimate>
+              </li>
             ))}
 
             <Link
@@ -347,7 +355,7 @@ const Repair: React.FC = ({ pageContext }: any) => {
               <p>Все бренды</p>
               <ChevronDoubleRightIcon className="w-10 h-10" />
             </Link>
-          </div>
+          </ul>
         </div>
 
         <ScrollAnimate>

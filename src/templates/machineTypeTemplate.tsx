@@ -219,7 +219,7 @@ const MachineTypeTemplate: React.FC = ({ pageContext }: any) => {
               <p>{description}</p>
               <ul className="space-y-3 list-disc list-inside">
                 {descriptionList?.map((descriptionListItem: any) => (
-                  <li>{descriptionListItem}</li>
+                  <li key={descriptionListItem}>{descriptionListItem}</li>
                 ))}
               </ul>
             </div>
@@ -232,21 +232,22 @@ const MachineTypeTemplate: React.FC = ({ pageContext }: any) => {
           </h2>
         </ScrollAnimate>
 
-        <div className="gridCol">
+        <ul className="gridCol">
           {brands?.map((brand: any) => {
             return (
-              <ScrollAnimate>
-                <Link
-                  key={brand?.name}
-                  to={brand?.name || "/"}
-                  className="flex flex-col items-center hover:scale-105 cursor-pointer"
-                >
-                  {getImage(brand.logo)}
-                </Link>
-              </ScrollAnimate>
+              <li key={brand?.name}>
+                <ScrollAnimate>
+                  <Link
+                    to={brand?.name || "/"}
+                    className="flex flex-col items-center hover:scale-105 cursor-pointer"
+                  >
+                    {getImage(brand.logo)}
+                  </Link>
+                </ScrollAnimate>
+              </li>
             );
           })}
-        </div>
+        </ul>
 
         <ScrollAnimate>
           <h3 className="text-xl md:text-2xl text-center text-black pt-10">
@@ -270,22 +271,24 @@ const MachineTypeTemplate: React.FC = ({ pageContext }: any) => {
         </ScrollAnimate>
 
         <ScrollAnimate>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-base">
+          <ul className="grid grid-cols-1 md:grid-cols-3 gap-10 text-base list-none list-inside">
             {advantages?.map((advantage: any) => (
-              <div className="p-5 border-2 border-black space-y-5">
-                <h5 className="text-xl font-bold">{advantage.title}</h5>
-                {advantage.descriptionType === "text" ? (
-                  <p>{advantage.description}</p>
-                ) : (
-                  <ul className="list-disc list-inside space-y-4">
-                    {advantage.description.map((descriptionListItem: any) => (
-                      <li>{descriptionListItem}</li>
-                    ))}
-                  </ul>
-                )}
-              </div>
+              <li key={advantage.title}>
+                <div className="p-5 border-2 border-black space-y-5">
+                  <h5 className="text-xl font-bold">{advantage.title}</h5>
+                  {advantage.descriptionType === "text" ? (
+                    <p>{advantage.description}</p>
+                  ) : (
+                    <ul className="list-disc list-inside space-y-4">
+                      {advantage.description.map((descriptionListItem: any) => (
+                        <li key={descriptionListItem}>{descriptionListItem}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </li>
             ))}
-          </div>
+          </ul>
         </ScrollAnimate>
 
         <ScrollAnimate>
@@ -312,7 +315,10 @@ const MachineTypeTemplate: React.FC = ({ pageContext }: any) => {
               </thead>
               <tbody>
                 {servicePrices.map((servicePrice) => (
-                  <tr className="bg-white border-b hover:bg-gray-50 dark:hover:bg-gray-600">
+                  <tr
+                    key={servicePrice.title}
+                    className="bg-white border-b hover:bg-gray-50 dark:hover:bg-gray-600"
+                  >
                     <th
                       scope="row"
                       className="px-6 py-4 font-medium text-gray-900 dark:text-white"

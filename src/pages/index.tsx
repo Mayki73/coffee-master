@@ -274,7 +274,7 @@ const IndexPage: React.FC<PageProps> = () => {
         />
         <meta
           name="twitter:title"
-          content="Ремонт кофемашин в Минске на дому и в офисе - сервисный центр Сoffeeremont"
+          content="Ремонт кофемашин в Минске на  дому и в офисе - сервисный центр Сoffeeremont"
         />
         <script type="application/ld+json">
           {JSON.stringify(structuredData)}
@@ -333,61 +333,68 @@ const IndexPage: React.FC<PageProps> = () => {
 
           <div className="divide-y">
             <dl className="mt-10 space-y-6">
-              {dropdownList.map((item) => (
-                <ScrollAnimate>
-                  <Disclosure
-                    as="div"
-                    key={item.title}
-                    className="pt-6 pb-3 border-b border-black"
-                  >
-                    {({ open }) => (
-                      <>
-                        <dt>
-                          <Disclosure.Button className="flex w-full items-start justify-between text-left text-black">
-                            <span className="text-xl font-semibold leading-7">
-                              {item.title}
-                            </span>
-                            <span className="ml-6 flex h-7 items-center">
-                              {open ? (
-                                <MinusSmallIcon
-                                  className="h-6 w-6"
-                                  aria-hidden="true"
-                                />
-                              ) : (
-                                <PlusSmallIcon
-                                  className="h-6 w-6"
-                                  aria-hidden="true"
-                                />
-                              )}
-                            </span>
-                          </Disclosure.Button>
-                        </dt>
-                        <Disclosure.Panel as="dd" className="mt-2 pr-12">
-                          <div
-                            className={`grid grid-cols-1 md:grid-cols-${item.columns} gap-10 py-10`}
-                          >
-                            {item.brands.map((brand) => (
-                              <Link
-                                to={brand.link}
-                                className="flex flex-col items-center justify-center space-y-3 hover:scale-105"
+              <ul className="space-y-6 list-none list-inside">
+                {dropdownList.map((item) => (
+                  <li key={item.title}>
+                    <ScrollAnimate>
+                      <Disclosure
+                        as="div"
+                        key={item.title}
+                        className="pt-6 pb-3 border-b border-black"
+                      >
+                        {({ open }) => (
+                          <>
+                            <dt>
+                              <Disclosure.Button className="flex w-full items-start justify-between text-left text-black">
+                                <span className="text-xl font-semibold leading-7">
+                                  {item.title}
+                                </span>
+                                <span className="ml-6 flex h-7 items-center">
+                                  {open ? (
+                                    <MinusSmallIcon
+                                      className="h-6 w-6"
+                                      aria-hidden="true"
+                                    />
+                                  ) : (
+                                    <PlusSmallIcon
+                                      className="h-6 w-6"
+                                      aria-hidden="true"
+                                    />
+                                  )}
+                                </span>
+                              </Disclosure.Button>
+                            </dt>
+                            <Disclosure.Panel as="dd" className="mt-2 pr-12">
+                              <div
+                                className={`grid grid-cols-1 md:grid-cols-${item.columns} gap-10 py-10`}
                               >
-                                <img
-                                  className="max-w-[10rem] max-h-[10rem]"
-                                  src={brand.image}
-                                  alt={brand.name}
-                                />
-                                {item.labels ? (
-                                  <p className="text-center">{brand.name}</p>
-                                ) : null}
-                              </Link>
-                            ))}
-                          </div>
-                        </Disclosure.Panel>
-                      </>
-                    )}
-                  </Disclosure>
-                </ScrollAnimate>
-              ))}
+                                {item.brands.map((brand) => (
+                                  <Link
+                                    to={brand.link}
+                                    key={brand.name}
+                                    className="flex flex-col items-center justify-center space-y-3 hover:scale-105"
+                                  >
+                                    <img
+                                      className="max-w-[10rem] max-h-[10rem]"
+                                      src={brand.image}
+                                      alt={brand.name}
+                                    />
+                                    {item.labels ? (
+                                      <p className="text-center">
+                                        {brand.name}
+                                      </p>
+                                    ) : null}
+                                  </Link>
+                                ))}
+                              </div>
+                            </Disclosure.Panel>
+                          </>
+                        )}
+                      </Disclosure>
+                    </ScrollAnimate>
+                  </li>
+                ))}
+              </ul>
             </dl>
           </div>
         </section>
@@ -400,21 +407,23 @@ const IndexPage: React.FC<PageProps> = () => {
               </h4>
             </ScrollAnimate>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-y-16 gap-x-5">
+            <ul className="grid grid-cols-1 md:grid-cols-3 gap-y-16 gap-x-5 list-none list-inside">
               {advantages.map((advantage) => (
-                <ScrollAnimate>
-                  <div className="flex flex-col md:flex-row items-center text-center md:text-left space-y-5 md:space-x-10">
-                    {advantage.icon}
-                    <div className="space-y-5">
-                      <p className="text-xl font-bold">{advantage.title}</p>
-                      <p className="text-gray-600 max-w-[30rem] md:max-w-full">
-                        {advantage.description}
-                      </p>
+                <li key={advantage.title}>
+                  <ScrollAnimate key={advantage.title}>
+                    <div className="flex flex-col md:flex-row items-center text-center md:text-left space-y-5 md:space-x-10">
+                      {advantage.icon}
+                      <div className="space-y-5">
+                        <p className="text-xl font-bold">{advantage.title}</p>
+                        <p className="text-gray-600 max-w-[30rem] md:max-w-full">
+                          {advantage.description}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </ScrollAnimate>
+                  </ScrollAnimate>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </section>
 
@@ -435,20 +444,22 @@ const IndexPage: React.FC<PageProps> = () => {
             </ScrollAnimate>
           </div>
 
-          <div className="pt-10 grid grid-cols-1 md:grid-cols-3 gap-12">
+          <ul className="pt-10 grid grid-cols-1 md:grid-cols-3 gap-12 list-none list-inside">
             {prices.map((price) => (
-              <ScrollAnimate>
-                <div
-                  onClick={openModalHandler}
-                  className="flex flex-col justify-between space-y-10 p-5 border-2 border-black hover:scale-105 hover:cursor-pointer bg-gray-100 hover:bg-white"
-                >
-                  <p className="text-xl font-bold">{price.title}</p>
-                  <p className="text-gray-600">{price.description}</p>
-                  <p className="font-bold text-xl">{price.price}</p>
-                </div>
-              </ScrollAnimate>
+              <li className="h-full" key={price.title}>
+                <ScrollAnimate className="h-full">
+                  <div
+                    onClick={openModalHandler}
+                    className="flex flex-col justify-between space-y-10 p-5 border-2 h-full border-black hover:scale-105 hover:cursor-pointer bg-gray-100 hover:bg-white"
+                  >
+                    <p className="text-xl font-bold">{price.title}</p>
+                    <p className="text-gray-600">{price.description}</p>
+                    <p className="font-bold text-xl">{price.price}</p>
+                  </div>
+                </ScrollAnimate>
+              </li>
             ))}
-          </div>
+          </ul>
           <ScrollAnimate>
             <div className="flex justify-center">
               <Button

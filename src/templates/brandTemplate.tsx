@@ -191,8 +191,8 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
                 </h3>
 
                 <ul className="space-y-5 list-disc list-inside">
-                  <li>Диагностика</li>
-                  <li>Консультация</li>
+                  <li key="diagnostic">Диагностика</li>
+                  <li key="consultation">Консультация</li>
                 </ul>
               </div>
 
@@ -203,9 +203,9 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
                 <h3 className="text-lg font-bold text-black">Скидки</h3>
 
                 <ul className="space-y-5 list-disc list-inside">
-                  <li>За ремонт нескольких кофемашин</li>
-                  <li>Мы часто проводим различные акции</li>
-                  <li>
+                  <li key="repair">За ремонт нескольких кофемашин</li>
+                  <li key="discount">Мы часто проводим различные акции</li>
+                  <li key="leave order">
                     Оставьте заявку прямо сейчас и получите свой первый подарок
                   </li>
                 </ul>
@@ -249,16 +249,16 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
                 </h3>
 
                 <ul className="space-y-5 list-disc list-inside">
-                  <li>
+                  <li key="master experience">
                     У всех мастеров огромный опыт в ремонте кофемашин и
                     кофеварок {name[0].toUpperCase() + name.slice(1)} различной
                     степени сложности
                   </li>
-                  <li>
+                  <li key="own masters">
                     Все мастера в штате компании, мы не отдаем работы сторонним
                     специалистам, потому что ценим качество
                   </li>
-                  <li>
+                  <li key="learning">
                     Научим вас проводить необходимые процедуры по обслуживанию и
                     очистке кофемашин {name[0].toUpperCase() + name.slice(1)}.
                   </li>
@@ -273,17 +273,17 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
                 </h3>
 
                 <ul className="space-y-5 list-disc list-inside">
-                  <li>
+                  <li key="original">
                     Мы закупаем только оригинальные запчасти{" "}
                     {name[0].toUpperCase() + name.slice(1)} от производителя у
                     проверенных поставщиков
                   </li>
-                  <li>
+                  <li key="details">
                     Часто выходящие из строя детали{" "}
                     {name[0].toUpperCase() + name.slice(1)} уже в наличии у
                     мастера, поэтому ремонт занимает не более трех часов.
                   </li>
-                  <li>
+                  <li key="chemistry">
                     Вы можете приобрести профессиональную химию для обслуживания
                     {name[0].toUpperCase() + name.slice(1)} у наших мастеров.
                   </li>
@@ -342,53 +342,57 @@ const BrandTemplate: React.FC = ({ pageContext }: any) => {
           </ScrollAnimate>
 
           <div>
-            <dl className="mt-10 space-y-6">
-              {models.map((model: any) => (
-                <ScrollAnimate>
-                  <Disclosure
-                    as="div"
-                    key={model.title}
-                    className="pt-6 pb-3 border-b border-black"
-                  >
-                    {({ open }) => (
-                      <>
-                        <dt>
-                          <Disclosure.Button className="flex w-full items-start justify-between text-left text-black">
-                            <span className="text-lg md:text-xl font-semibold leading-7">
-                              {model.title}
-                            </span>
-                            <span className="ml-6 flex h-7 items-center">
-                              {open ? (
-                                <MinusSmallIcon
-                                  className="h-6 w-6"
-                                  aria-hidden="true"
-                                />
-                              ) : (
-                                <PlusSmallIcon
-                                  className="h-6 w-6"
-                                  aria-hidden="true"
-                                />
-                              )}
-                            </span>
-                          </Disclosure.Button>
-                        </dt>
-                        <Disclosure.Panel as="dd" className="mt-2 pr-12">
-                          <ul className={`space-y-5`}>
-                            {model.details.map((detail: any) => (
-                              <li
-                                className="border-b border-gray-600 pb-5"
-                                key={detail}
-                              >
-                                {detail}
-                              </li>
-                            ))}
-                          </ul>
-                        </Disclosure.Panel>
-                      </>
-                    )}
-                  </Disclosure>
-                </ScrollAnimate>
-              ))}
+            <dl className="mt-10">
+              <ul className="list-none list-inside space-y-6">
+                {models.map((model: any) => (
+                  <li key={model.title}>
+                    <ScrollAnimate>
+                      <Disclosure
+                        as="div"
+                        key={model.title}
+                        className="pt-6 pb-3 border-b border-black"
+                      >
+                        {({ open }) => (
+                          <>
+                            <dt>
+                              <Disclosure.Button className="flex w-full items-start justify-between text-left text-black">
+                                <span className="text-lg md:text-xl font-semibold leading-7">
+                                  {model.title}
+                                </span>
+                                <span className="ml-6 flex h-7 items-center">
+                                  {open ? (
+                                    <MinusSmallIcon
+                                      className="h-6 w-6"
+                                      aria-hidden="true"
+                                    />
+                                  ) : (
+                                    <PlusSmallIcon
+                                      className="h-6 w-6"
+                                      aria-hidden="true"
+                                    />
+                                  )}
+                                </span>
+                              </Disclosure.Button>
+                            </dt>
+                            <Disclosure.Panel as="dd" className="mt-2 pr-12">
+                              <ul className={`space-y-5`}>
+                                {model.details.map((detail: any) => (
+                                  <li
+                                    className="border-b border-gray-600 pb-5"
+                                    key={detail}
+                                  >
+                                    {detail}
+                                  </li>
+                                ))}
+                              </ul>
+                            </Disclosure.Panel>
+                          </>
+                        )}
+                      </Disclosure>
+                    </ScrollAnimate>
+                  </li>
+                ))}
+              </ul>
             </dl>
           </div>
         </section>

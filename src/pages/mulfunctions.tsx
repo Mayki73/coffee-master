@@ -167,20 +167,24 @@ const Mulfunctions: React.FC = () => {
           </p>
         </ScrollAnimate>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+        <ul className="grid grid-cols-1 md:grid-cols-4 gap-10 list-none list-inside">
           {mulfunctions.map((mulfunction) => (
-            <ScrollAnimate>
-              <Link
-                key={mulfunction.title}
-                to={mulfunction.link}
-                className="flex flex-col items-center justify-center border-2 border-black p-5 max-h-[15rem] h-full hover:scale-105 bg-gray-100 hover:bg-white"
-              >
-                <IonIcon className="w-10 h-10" icon={mulfunction.icon} />
-                <p className="text-center max-w-[16rem]">{mulfunction.title}</p>
-              </Link>
-            </ScrollAnimate>
+            <li className="h-full" key={mulfunction.title}>
+              <ScrollAnimate className="h-full">
+                <Link
+                  key={mulfunction.title}
+                  to={mulfunction.link}
+                  className="flex flex-col items-center justify-center border-2 border-black p-5 h-full hover:scale-105 bg-gray-100 hover:bg-white"
+                >
+                  <IonIcon className="w-10 h-10" icon={mulfunction.icon} />
+                  <p className="text-center max-w-[16rem]">
+                    {mulfunction.title}
+                  </p>
+                </Link>
+              </ScrollAnimate>
+            </li>
           ))}
-        </div>
+        </ul>
 
         <ScrollAnimate>
           <h2 className="text-xl md:text-2xl text-center text-black font-medium pt-10">
