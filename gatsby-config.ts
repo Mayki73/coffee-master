@@ -5,7 +5,7 @@ const config: GatsbyConfig = {
     title: `coffeeremont24`,
     description: "Ремонт кофемашин и кофеварок в Минске",
     siteUrl: `https://www.coffeeremont24.by`,
-    image: "favicon.ico",
+    image: "static/favicon.ico",
     lang: "ru-RU",
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.

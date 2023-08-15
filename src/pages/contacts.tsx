@@ -78,6 +78,10 @@ const Contacts: React.FC = () => {
           <meta name="twitter:card" content="summary_large_image" />
           <link rel="icon" href={logoUrl} />
           <meta
+          property="og:image"
+          content="https://coffeeremont24.by/favicon.ico"
+        />
+          <meta
             name="twitter:description"
             content="Наши контактные данные для связи с нами по вопросам ремонта кофемашин. Свяжитесь с нами для получения дополнительной информации, оставьте заявку на ремонт или задайте вопросы нашей команде. Мы готовы помочь вам с вашими кофейными потребностями."
           />

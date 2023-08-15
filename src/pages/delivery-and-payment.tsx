@@ -38,6 +38,10 @@ const DeliveryAndPayment: React.FC = () => {
         <meta property="og:type" content="article" />
         <link rel="icon" href={logoUrl} />
         <meta
+          property="og:image"
+          content="https://coffeeremont24.by/favicon.ico"
+        />
+        <meta
           property="og:title"
           content="Доставка и оплата - Ремонт кофемашин в Минске | CoffeeRemont24"
         />

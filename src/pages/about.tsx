@@ -80,6 +80,10 @@ const About: React.FC = () => {
           content="https://www.coffeeremont24.by/about/"
         />
         <link rel="icon" href={logoUrl} />
+        <meta
+          property="og:image"
+          content="https://coffeeremont24.by/favicon.ico"
+        />
         <meta property="og:site_name" content="coffeeremont24" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta

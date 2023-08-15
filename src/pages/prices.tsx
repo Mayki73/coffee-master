@@ -250,6 +250,10 @@ const Prices: React.FC = () => {
         />
         <link rel="icon" href={logoUrl} />
         <meta
+          property="og:image"
+          content="https://coffeeremont24.by/favicon.ico"
+        />
+        <meta
           property="og:description"
           content="Стоимость услуг по ремонту и обслуживанию кофемашин в Минске. Диагностика и выезд - бесплатно! Прайс-лист на сервисные работы и устранение неисправностей"
         />

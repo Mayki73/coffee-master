@@ -86,6 +86,10 @@ const Repair: React.FC = ({ pageContext }: any) => {
         />
         <link rel="icon" href={logoUrl} />
         <meta
+          property="og:image"
+          content="https://coffeeremont24.by/favicon.ico"
+        />
+        <meta
           property="og:description"
           content="CoffeeRemont24 предлагает профессиональные услуги по ремонту кофемашин разных категорий. Выберите нужную категорию: Бытовые кофемашины, Встраиваемые, Профессиональные или Вендинговые, и ознакомьтесь со списком брендов, которые мы обслуживаем"
         />

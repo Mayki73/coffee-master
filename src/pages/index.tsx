@@ -265,6 +265,10 @@ const IndexPage: React.FC<PageProps> = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="og:site_name" content="CoffeeRemont24" />
         <meta
+          property="og:image"
+          content="https://coffeeremont24.by/favicon.ico"
+        />
+        <meta
           name="twitter:description"
           content="Ремонт кофемашин в Минске и области с выездом на дом. Бесплатная диагностика, гарантия, низкие цены, опытные мастера, срочный ремонт - сервисный центр coffeeremont24"
         />
@@ -301,11 +305,11 @@ const IndexPage: React.FC<PageProps> = () => {
               </h1>
             </ScrollAnimate>
             <ScrollAnimate>
-              <p className="w-full max-w-[150rem] md:max-w-[80rem] text-center text-base md:text-xl">
+              <h2 className="w-full max-w-[150rem] md:max-w-[80rem] text-center text-base md:text-xl">
                 Наши мастера выполняют качественный ремонт для продления срока
                 службы кофемашин. Мы не делаем диагностику за деньги – мы
                 выявляем неисправные компоненты и меняем их на новые.
-              </p>
+              </h2>
             </ScrollAnimate>
             <ScrollAnimate>
               <div className="flex justify-center">
@@ -322,9 +326,9 @@ const IndexPage: React.FC<PageProps> = () => {
 
         <section className="max-w-screen-2xl mx-5 md:mx-auto">
           <ScrollAnimate>
-            <h2 className="text-xl md:text-2xl text-center">
+            <h3 className="text-xl md:text-2xl text-center">
               Узнать стоимость ремонта
-            </h2>
+            </h3>
           </ScrollAnimate>
 
           <div className="divide-y">
@@ -391,9 +395,9 @@ const IndexPage: React.FC<PageProps> = () => {
         <section className="w-full py-20 bg-gray-100">
           <div className="max-w-screen-2xl mx-5 md:mx-auto space-y-20">
             <ScrollAnimate>
-              <h2 className="text-xl md:text-2xl text-center">
+              <h4 className="text-xl md:text-2xl text-center">
                 Наши преимущества
-              </h2>
+              </h4>
             </ScrollAnimate>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-y-16 gap-x-5">
@@ -402,7 +406,7 @@ const IndexPage: React.FC<PageProps> = () => {
                   <div className="flex flex-col md:flex-row items-center text-center md:text-left space-y-5 md:space-x-10">
                     {advantage.icon}
                     <div className="space-y-5">
-                      <h3 className="text-xl font-bold">{advantage.title}</h3>
+                      <p className="text-xl font-bold">{advantage.title}</p>
                       <p className="text-gray-600 max-w-[30rem] md:max-w-full">
                         {advantage.description}
                       </p>
@@ -416,9 +420,9 @@ const IndexPage: React.FC<PageProps> = () => {
 
         <section className="max-w-screen-2xl mx-5 md:mx-auto space-y-10">
           <ScrollAnimate>
-            <h2 className="text-center text-xl md:text-2xl">
+            <p className="text-center text-xl md:text-2xl">
               Цены на ремонт и обслуживание
-            </h2>
+            </p>
           </ScrollAnimate>
 
           <div className="flex justify-center">
@@ -438,7 +442,7 @@ const IndexPage: React.FC<PageProps> = () => {
                   onClick={openModalHandler}
                   className="flex flex-col justify-between space-y-10 p-5 border-2 border-black hover:scale-105 hover:cursor-pointer bg-gray-100 hover:bg-white"
                 >
-                  <h3 className="text-xl font-bold">{price.title}</h3>
+                  <p className="text-xl font-bold">{price.title}</p>
                   <p className="text-gray-600">{price.description}</p>
                   <p className="font-bold text-xl">{price.price}</p>
                 </div>
@@ -460,7 +464,7 @@ const IndexPage: React.FC<PageProps> = () => {
         <section className="w-full py-20 bg-gray-100">
           <div className="max-w-screen-2xl mx-5 md:mx-auto space-y-10 pb-10">
             <ScrollAnimate>
-              <h2 className="text-center text-xl md:text-2xl">Отзывы</h2>
+              <p className="text-center text-xl md:text-2xl">Отзывы</p>
             </ScrollAnimate>
           </div>
 

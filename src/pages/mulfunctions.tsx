@@ -129,6 +129,10 @@ const Mulfunctions: React.FC = () => {
         />
         <link rel="icon" href={logoUrl} />
         <meta
+          property="og:image"
+          content="https://coffeeremont24.by/favicon.ico"
+        />
+        <meta
           property="og:url"
           content="https://coffeeremont24.by/mulfunctions/"
         />

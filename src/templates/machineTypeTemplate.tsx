@@ -193,6 +193,10 @@ const MachineTypeTemplate: React.FC = ({ pageContext }: any) => {
         <meta name="twitter:description" content={seo.description} />
         <meta name="twitter:title" content={seo.title} />
         <link rel="icon" href={logoUrl} />
+        <meta
+          property="og:image"
+          content="https://coffeeremont24.by/favicon.ico"
+        />
         <script type="application/ld+json">
           {JSON.stringify(structuredData)}
         </script>
