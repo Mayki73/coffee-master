@@ -6,8 +6,8 @@ import ContactForm from "../components/ContactsForm/ContactForm";
 import { QueryClientProvider } from "@tanstack/react-query";
 import queryClient from "../constants/query-client";
 import { SnackbarProvider } from "notistack";
-import { Helmet } from "react-helmet";
 import ScrollAnimate from "../components/ScrollAnimate";
+import SEOWrapper from "../components/SEOWrapper";
 
 const contacts = [
   {
@@ -31,16 +31,6 @@ const contacts = [
 ];
 
 const Contacts: React.FC = () => {
-  const logoUrl = "https://coffeeremont24.by/favicon.ico"; // Replace with your logo URL
-
-  const structuredData = {
-    "@context": "http://schema.org",
-    "@type": "Organization",
-    name: "CoffeeRemont24",
-    url: "https://www.coffeeremont24.by/contacts/",
-    logo: logoUrl,
-  };
-
   return (
     <>
       <SnackbarProvider
@@ -52,88 +42,56 @@ const Contacts: React.FC = () => {
         autoHideDuration={3000}
         className="bg-white"
       >
-        <Helmet>
-          <meta
-            name="robots"
-            content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-          />
-          <title>Контакты - coffeeremont24</title>
-          <meta
-            name="description"
-            content="Наши контактные данные для связи с нами по вопросам ремонта кофемашин. Свяжитесь с нами для получения дополнительной информации, оставьте заявку на ремонт или задайте вопросы нашей команде. Мы готовы помочь вам с вашими кофейными потребностями."
-          />
-          <link rel="canonical" href="https://coffeeremont24.by/contacts/" />
-          <meta property="og:locale" content="ru_RU" />
-          <meta property="og:type" content="article" />
-          <meta property="og:title" content="Контакты - coffeeremont24" />
-          <meta
-            property="og:description"
-            content="Наши контактные данные для связи с нами по вопросам ремонта кофемашин. Свяжитесь с нами для получения дополнительной информации, оставьте заявку на ремонт или задайте вопросы нашей команде. Мы готовы помочь вам с вашими кофейными потребностями."
-          />
-          <meta
-            property="og:url"
-            content="https://coffeeremont24.by/contacts/"
-          />
-          <meta property="og:site_name" content="coffeeremont24" />
-          <meta name="twitter:card" content="summary_large_image" />
-          <link rel="icon" href={logoUrl} />
-          <meta
-            property="og:image"
-            content="https://coffeeremont24.by/favicon.ico"
-          />
-          <meta
-            name="twitter:description"
-            content="Наши контактные данные для связи с нами по вопросам ремонта кофемашин. Свяжитесь с нами для получения дополнительной информации, оставьте заявку на ремонт или задайте вопросы нашей команде. Мы готовы помочь вам с вашими кофейными потребностями."
-          />
-          <meta name="twitter:title" content="Контакты - coffeeremont24" />
-          <script type="application/ld+json">
-            {JSON.stringify(structuredData)}
-          </script>
-        </Helmet>
-        <QueryClientProvider client={queryClient}>
-          <Header />
-          <main className="max-w-screen-2xl mx-5 md:mx-auto my-20 font-[Comfortaa] text-lg leading-8 tracking-wider text-gray-600 font-light space-y-10">
-            <ScrollAnimate>
-              <h1 className="text-2xl font-medium text-center text-black">
-                Контакты
-              </h1>
-            </ScrollAnimate>
+        <SEOWrapper
+          title="Контакты - coffeeremont24"
+          description="Наши контактные данные для связи с нами по вопросам ремонта кофемашин. Свяжитесь с нами для получения дополнительной информации, оставьте заявку на ремонт или задайте вопросы нашей команде. Мы готовы помочь вам с вашими кофейными потребностями."
+          link="https://coffeeremont24.by/contacts/"
+        >
+          <QueryClientProvider client={queryClient}>
+            <Header />
+            <main className="max-w-screen-2xl mx-5 md:mx-auto my-20 font-[Comfortaa] text-lg leading-8 tracking-wider text-gray-600 font-light space-y-10">
+              <ScrollAnimate>
+                <h1 className="text-2xl font-medium text-center text-black">
+                  Контакты
+                </h1>
+              </ScrollAnimate>
 
-            <div className="flex justify-center items-center">
-              <ul className="space-y-5 list-none list-inside">
-                {contacts.map((item) => (
-                  <li key={item.title}>
-                    <ScrollAnimate>
-                      <div className="flex flex-col md:flex-row space-y-6 md:space-x-10">
-                        <div className="w-full md:w-max flex justify-center md:justify-end items-end">
-                          {item.icon}
+              <div className="flex justify-center items-center">
+                <ul className="space-y-5 list-none list-inside">
+                  {contacts.map((item) => (
+                    <li key={item.title}>
+                      <ScrollAnimate>
+                        <div className="flex flex-col md:flex-row space-y-6 md:space-x-10">
+                          <div className="w-full md:w-max flex justify-center md:justify-end items-end">
+                            {item.icon}
+                          </div>
+                          <a
+                            href={item.link}
+                            target="_blank"
+                            className="text-lg text-center md:text-start"
+                          >
+                            {item.value}
+                          </a>
                         </div>
-                        <a
-                          href={item.link}
-                          target="_blank"
-                          className="text-lg text-center md:text-start"
-                        >
-                          {item.value}
-                        </a>
-                      </div>
-                    </ScrollAnimate>
-                  </li>
-                ))}
-              </ul>
-            </div>
+                      </ScrollAnimate>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-            <ScrollAnimate>
-              <h2 className="text-xl md:text-2xl font-medium text-center text-black pt-10">
-                Оставьте нам вопрос
-              </h2>
-            </ScrollAnimate>
+              <ScrollAnimate>
+                <h2 className="text-xl md:text-2xl font-medium text-center text-black pt-10">
+                  Оставьте нам вопрос
+                </h2>
+              </ScrollAnimate>
 
-            <div className="flex justify-center w-full">
-              <ContactForm />
-            </div>
-          </main>
-          <Footer />
-        </QueryClientProvider>
+              <div className="flex justify-center w-full">
+                <ContactForm />
+              </div>
+            </main>
+            <Footer />
+          </QueryClientProvider>
+        </SEOWrapper>
       </SnackbarProvider>
     </>
   );

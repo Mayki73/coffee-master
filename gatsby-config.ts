@@ -2,7 +2,7 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `coffeeremont24`,
+    title: `CoffeeRemont24`,
     description: "Ремонт кофемашин и кофеварок в Минске",
     siteUrl: `https://www.coffeeremont24.by`,
     favicon: "icon.png",
