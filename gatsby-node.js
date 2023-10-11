@@ -3,7 +3,7 @@ const brandsData = require("./src/data/brands.json");
 const mulfunctions = require("./src/data/mulfunctions.json");
 
 exports.createPages = async ({ graphql, actions, useStaticQuery }) => {
-  const { createPage } = actions;
+  const { createPage, createRedirect } = actions;
 
   // createPage({
   //   path: "/",
@@ -52,6 +52,11 @@ exports.createPages = async ({ graphql, actions, useStaticQuery }) => {
   //     }
   //   },
   // });
+
+  createRedirect({
+    fromPath: `http://coffeeremont24.by/`,
+    toPath: `https://www.coffeeremont24.by/`,
+  });
 
   createPage({
     path: "/repair/",
