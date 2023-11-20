@@ -12,7 +12,7 @@ import SEOWrapper from "../components/SEOWrapper";
 const contacts = [
   {
     title: "Адрес",
-    value: "г. Минск, ул. Кирилла Туровского, д. 6",
+    value: "г. Минск, ул. Филимонова, д. 22",
     icon: <MapPinIcon className="w-7 h-7" />,
     link: "https://goo.gl/maps/kbKTSwr7cnDWSRME7",
   },
