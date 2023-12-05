@@ -7,7 +7,7 @@ import { Link } from "gatsby";
 const contacts = [
   {
     title: "Адрес",
-    value: "г. Минск, ул. Филимонова, д. 22",
+    value: "г. Минск, ул. Петра Мстиславца, д. 5",
     icon: <MapPinIcon className="w-7 h-7" />,
     link: "https://goo.gl/maps/kbKTSwr7cnDWSRME7",
   },
