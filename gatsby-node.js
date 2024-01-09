@@ -5,54 +5,6 @@ const mulfunctions = require("./src/data/mulfunctions.json");
 exports.createPages = async ({ graphql, actions, useStaticQuery }) => {
   const { createPage, createRedirect } = actions;
 
-  // createPage({
-  //   path: "/",
-  //   component: path.resolve("./src/templates/MainTemplate.tsx"),
-  //   context: {
-  //     popular: {
-  //       title: "Популярные кофемашины",
-  //       brands: brandsData.machines[0].brands.filter((el) => {
-  //         return (
-  //           el.name === "bosch" ||
-  //           el.name === "delonghi" ||
-  //           el.name === "jura" ||
-  //           el.name === "nivona" ||
-  //           el.name === "saeco" ||
-  //           el.name === "wmf"
-  //         );
-  //       }),
-  //     },
-  //     byBrands: {
-  //       title: "По бренду",
-  //       brands: brandsData.machines[0].brands,
-  //     },
-  //     byType: {
-  //       title: "По типу кофемашины",
-  //       types: [
-  //         {
-  //           title: "Бытовые",
-  //           image: typeImages[0].node.childImageSharp.gatsbyImageData,
-  //         },
-  //         {
-  //           title: "Встраиваемые",
-  //           image: typeImages[1].node.childImageSharp.gatsbyImageData,
-  //         },
-  //         {
-  //           title: "Профессиональные",
-  //           image: typeImages[2].node.childImageSharp.gatsbyImageData,
-  //         },
-  //         {
-  //           title: "Вендинговые",
-  //           image: typeImages[3].node.childImageSharp.gatsbyImageData,
-  //         },
-  //       ],
-  //     },
-  //     forCafe: {
-
-  //     }
-  //   },
-  // });
-
   createRedirect({
     fromPath: `http://coffeeremont24.by/`,
     toPath: `https://www.coffeeremont24.by/`,
