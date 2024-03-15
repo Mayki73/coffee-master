@@ -1,0 +1,11 @@
+.gridCol {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 4rem;
+}
+
+@media screen and (max-width: 768px) {
+    .gridCol {
+        grid-template-columns: auto auto;
+    }
+}
