@@ -25,6 +25,12 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap"
           rel="stylesheet"
         />
+        <title>Страница не найдена | Coffeeremont24</title>
+        <meta
+          name="description"
+          content="Страница не найдена на сайте Coffeeremont24"
+        />
+        <link rel="icon" href="/brands/icon-coffeeremont.ico" />
       </head>
       <body className={inter.className}>{children}</body>
     </html>

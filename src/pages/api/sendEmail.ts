@@ -1,6 +1,10 @@
-const nodemailer = require("nodemailer");
+import nodemailer from "nodemailer";
 
-exports.handler = async (event) => {
+export default async function handler(req: any, res: any) {
+  if (req.method !== "POST") {
+    return res.status(405).end(); // Method Not Allowed
+  }
+
   const transporter = nodemailer.createTransport({
     host: "smtp.yandex.com",
     port: 465,
@@ -10,7 +14,7 @@ exports.handler = async (event) => {
       pass: "xjtsmyemkrbdvzlq",
     },
   });
-  const { phone, name, question, answers } = JSON.parse(event.body);
+  const { phone, name, question, answers } = req.body;
   if (phone === "+375 () - -")
     return {
       statusCode: 500,
@@ -61,18 +65,10 @@ exports.handler = async (event) => {
   };
 
   try {
-    const info = await transporter.sendMail(mailOptions);
-    console.log("Email sent:", info.response);
-
-    return {
-      statusCode: 200,
-      body: "Ваши данные успешно отправлены!",
-    };
+    await transporter.sendMail(mailOptions);
+    res.status(200).json({ statusCode: 200, message: "Email sent" });
   } catch (error) {
-    console.log("Email sent:", error);
-    return {
-      statusCode: 500,
-      body: "Произошла ошибка!",
-    };
+    console.error(error);
+    res.status(500).json({ statusCode: 500, message: "Internal server error" });
   }
-};
+}
