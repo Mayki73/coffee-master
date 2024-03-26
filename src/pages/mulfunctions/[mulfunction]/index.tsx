@@ -10,7 +10,7 @@ import Modal from "../../../components/Modal";
 import ScrollAnimate from "../../../components/ScrollAnimate";
 import SEOWrapper from "../../../components/SEOWrapper";
 import Mulfunctions from "../../../data/mulfunctions.json";
-import { notFound, useParams } from "next/navigation";
+import { notFound } from "next/navigation";
 import "../../../app/globals.css";
 import { GetStaticPaths, GetStaticProps } from "next";
 
@@ -53,7 +53,7 @@ const MulfunctionTemplate: React.FC<any> = ({ mulfunction }) => {
       <SEOWrapper
         title={seo?.title!}
         description={seo?.description!}
-        link={`https://www.coffeeremont.by/mulfunctions/${seo?.link!}`}
+        link={seo?.link!}
       >
         <Header />
         <main className="max-w-screen-2xl mx-5 md:mx-auto my-20 font-[Comfortaa] text-base md:text-lg leading-8 tracking-wider text-gray-600 font-light space-y-10">

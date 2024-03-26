@@ -100,7 +100,7 @@ const Repair: React.FC = () => {
               ))}
 
               <Link
-                href="/repair/household"
+                href="/repair/household/"
                 className="flex space-x-5 items-center justify-center hover:scale-110"
               >
                 <p>Все бренды</p>

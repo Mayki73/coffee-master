@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  trailingSlash: true,
   async redirects() {
     return [
       {
-        source: "/(//)+", // Match any number of consecutive slashes
-        destination: "/", // Redirect to the root path
-        statusCode: 301, // Use 301 status code for permanent redirect
+        source: "/(//)+",
+        destination: "/",
+        statusCode: 301,
       },
       {
         source: "/index.html",

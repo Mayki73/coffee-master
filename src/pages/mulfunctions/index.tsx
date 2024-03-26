@@ -20,62 +20,62 @@ const mulfunctions = [
   {
     title: "Выдает ошибку",
     icon: PiWarningCircle,
-    link: "/mulfunctions/error",
+    link: "/mulfunctions/error/",
   },
   {
     title: "Делает слишком горячий кофе",
     icon: BsThermometer,
-    link: "/mulfunctions/makes-too-hot-coffee",
+    link: "/mulfunctions/makes-too-hot-coffee/",
   },
   {
     title: "Жидкость в контейнере для отходов",
     icon: HiBeaker,
-    link: "/mulfunctions/liquid-in-waste-container",
+    link: "/mulfunctions/liquid-in-waste-container/",
   },
   {
     title: "Кофе не крепкий",
     icon: IoCafe,
-    link: "/mulfunctions/coffee-is-not-strong",
+    link: "/mulfunctions/coffee-is-not-strong/",
   },
   {
     title: "Неравномерная выдача напитка",
     icon: IoStatsChart,
-    link: "/mulfunctions/uneven-dispensing-of-drink",
+    link: "/mulfunctions/uneven-dispensing-of-drink/",
   },
   {
     title: "Протекает вода",
     icon: BiColorFill,
-    link: "/mulfunctions/water-flowing",
+    link: "/mulfunctions/water-flowing/",
   },
   {
     title: "Не включается",
     icon: IoFlash,
-    link: "/mulfunctions/doesnt-turning-on",
+    link: "/mulfunctions/doesnt-turning-on/",
   },
   {
     title: "Не вспенивает молоко",
     icon: SlCup,
-    link: "/mulfunctions/doesnt-froth-milk",
+    link: "/mulfunctions/doesnt-froth-milk/",
   },
   {
     title: "Не вынимается заварное устройство для промывки",
     icon: BiExit,
-    link: "/mulfunctions/brewing-unit-doesnt-come-out",
+    link: "/mulfunctions/brewing-unit-doesnt-come-out/",
   },
   {
     title: "Не доливает кофе",
     icon: BiWater,
-    link: "/mulfunctions/doesnt-add-coffee",
+    link: "/mulfunctions/doesnt-add-coffee/",
   },
   {
     title: "Слышен звук помола, но не наливает кофе",
     icon: CiWarning,
-    link: "/mulfunctions/doesnt-poure-coffee",
+    link: "/mulfunctions/doesnt-poure-coffee/",
   },
   {
     title: "Шумит во время налива напитка",
     icon: BiVolumeFull,
-    link: "/mulfunctions/noisy-while-pouring",
+    link: "/mulfunctions/noisy-while-pouring/",
   },
 ];
 

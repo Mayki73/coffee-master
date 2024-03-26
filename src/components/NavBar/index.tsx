@@ -11,51 +11,51 @@ const routes = [
   {
     id: 1,
     name: "О НАС",
-    path: "/about",
+    path: "/about/",
   },
   {
     id: 2,
     name: `РЕМОНТ`,
     icon: <ChevronDownIcon className="w-5 h-5" />,
-    path: "/repair",
+    path: "/repair/",
     list: [
       {
         name: "Бытовые",
-        path: "/repair/household",
+        path: "/repair/household/",
       },
       {
         name: "Встраиваемые",
-        path: "/repair/built-in",
+        path: "/repair/built-in/",
       },
       {
         name: "Профессиональные",
-        path: "/repair/professional",
+        path: "/repair/professional/",
       },
       {
         name: "Вендинговые",
-        path: "/repair/vending",
+        path: "/repair/vending/",
       },
     ],
   },
   {
     id: 3,
     name: "ЦЕНЫ",
-    path: "/prices",
+    path: "/prices/",
   },
   {
     id: 4,
     name: "НЕИСПРАВНОСТИ",
-    path: "/mulfunctions",
+    path: "/mulfunctions/",
   },
   {
     id: 5,
     name: "КОНТАКТЫ",
-    path: "/contacts",
+    path: "/contacts/",
   },
   {
     id: 6,
     name: "ДОСТАВКА И ОПЛАТА",
-    path: "/delivery-and-payment",
+    path: "/delivery-and-payment/",
   },
 ];
 

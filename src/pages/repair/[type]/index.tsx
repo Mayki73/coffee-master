@@ -203,7 +203,7 @@ const MachineTypeTemplate: React.FC<any> = ({ type }) => {
                 <li key={brand?.name}>
                   <ScrollAnimate>
                     <Link
-                      href={`/repair/${repairType}/${brand?.name || ""}`}
+                      href={`/repair/${repairType}/${brand?.name || ""}/`}
                       className="flex flex-col items-center hover:scale-105 cursor-pointer"
                     >
                       <Image
