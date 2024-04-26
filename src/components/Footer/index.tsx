@@ -7,7 +7,7 @@ import Link from "next/link";
 const contacts = [
   {
     title: "Адрес",
-    value: "г. Минск, ул. Петра Мстиславца, д. 5",
+    value: "г. Минск, ул. Туровского, д. 6",
     icon: <MapPinIcon className="w-7 h-7" />,
     link: "https://goo.gl/maps/kbKTSwr7cnDWSRME7",
   },
@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
               </li>
             ))}
           </ul>
-          <div className="flex space-x-5">
+          <div className="flex items-center space-x-5">
             <a href="viber://chat?number=%2B375333482482">
               <svg
                 id="Layer_1"
@@ -207,7 +207,7 @@ const Footer: React.FC = () => {
               </svg>
             </a>
 
-            <a href="https://t.me/REMKMM">
+            <a href="https://t.me/CoffeeRemont24by">
               <svg
                 width="50"
                 height="50"

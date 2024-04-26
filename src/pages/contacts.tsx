@@ -13,7 +13,7 @@ import "../app/globals.css";
 const contacts = [
   {
     title: "Адрес",
-    value: "г. Минск, ул. Петра Мстиславца, д. 22",
+    value: "г. Минск, ул. Туровского, д. 6",
     icon: <MapPinIcon className="w-7 h-7" />,
     link: "https://goo.gl/maps/kbKTSwr7cnDWSRME7",
   },
