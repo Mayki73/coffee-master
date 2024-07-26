@@ -1,5 +1,10 @@
 import React from "react";
-import { MapPinIcon, PhoneIcon, EnvelopeIcon } from "@heroicons/react/20/solid";
+import {
+  MapPinIcon,
+  PhoneIcon,
+  EnvelopeIcon,
+  ClockIcon,
+} from "@heroicons/react/20/solid";
 import { dropdownList } from "../../constants/dropdown-brands-list";
 import { repairList } from "../../constants/repair";
 import Link from "next/link";
@@ -16,6 +21,12 @@ const contacts = [
     value: "+375 (33) 348-24-82",
     icon: <PhoneIcon className="w-7 h-7" />,
     link: "tel:+375333482482",
+  },
+  {
+    title: "Время работы",
+    value: "Пн–Пт: 9:00—19:00 \n Сб: 11:00-16:00",
+    icon: <ClockIcon className="w-7 h-7" />,
+    link: "",
   },
   {
     title: "Email",
